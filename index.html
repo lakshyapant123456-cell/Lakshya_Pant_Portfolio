@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lakshya Pant. Mechanical Engineering Portfolio</title>
+<meta name="description" content="BEng (Hons) Mechanical Engineering graduate. Selected projects in design, simulation, and DFMA from Anglia Ruskin University and the IMechE Railway Challenge." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@400;500;600;700&family=Fragment+Mono&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  /* =================== Tokens =================== */
+  :root {
+    --paper: #efebe2;
+    --paper-2: #e6e1d3;
+    --paper-3: #ddd6c5;
+    --ink: #0d1b2a;
+    --ink-2: #1c2c40;
+    --muted: #5e6b7a;
+    --rule: #cdc5b3;
+    --accent: #2c4a6b;
+    --accent-soft: #5e7da0;
+    --bronze: #9b7b3f;
+    --bronze-soft: #c5a26a;
+    --display: 'Antonio', 'Helvetica Neue', sans-serif;
+    --serif: 'Playfair Display', 'Georgia', serif;
+    --body: 'Inter', system-ui, sans-serif;
+    --mono: 'Fragment Mono', 'IBM Plex Mono', monospace;
+    --max: 1280px;
+    --radius: 6px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+    overflow-x: hidden;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; height: auto; }
+  button { font-family: inherit; cursor: pointer; }
+
+  /* =================== Layout =================== */
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+  section { padding: 140px 0; position: relative; border-top: 1px solid var(--rule); }
+  section:first-of-type { border-top: 0; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: ""; width: 28px; height: 1px; background: var(--muted);
+  }
+
+  h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 0.95; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(40px, 6vw, 84px); text-transform: uppercase; }
+  h3 { font-size: clamp(22px, 2.4vw, 32px); text-transform: uppercase; letter-spacing: 0.01em; }
+
+  /* =================== Nav =================== */
+  nav.top {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 32px;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(239, 235, 226, 0.85);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .logo {
+    font-family: var(--display); font-weight: 700; font-size: 22px;
+    letter-spacing: 0.02em;
+  }
+  nav.top .logo .dot { color: var(--accent); }
+  nav.top ul {
+    list-style: none; display: flex; gap: 28px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  nav.top ul a { position: relative; padding-bottom: 4px; }
+  nav.top ul a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 1px;
+    width: 0; background: var(--ink); transition: width .3s ease;
+  }
+  nav.top ul a:hover::after { width: 100%; }
+  nav.top .cta {
+    border: 1px solid var(--ink);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    transition: all .25s ease;
+  }
+  nav.top .cta:hover { background: var(--ink); color: var(--paper); }
+  nav.top .cta-cv {
+    background: var(--bronze); color: var(--paper);
+    border-color: var(--bronze);
+  }
+  nav.top .cta-cv:hover {
+    background: transparent; color: var(--bronze); border-color: var(--bronze);
+  }
+  .btn .arr.arr-down::before { content: "↓"; }
+  @media (max-width: 900px) {
+    nav.top ul { display: none; }
+    nav.top .cta-cv { display: none; }
+  }
+
+  /* =================== Hero =================== */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 0 80px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-top: 0;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-meta div span {
+    display: block; color: var(--ink); margin-top: 6px; font-family: var(--body);
+    text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 500;
+  }
+  .hero-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 72px;
+  }
+  .hero-text { perspective: 1000px; }
+
+  /* New name treatment: refined display, both lines same big size, subtle italic accent */
+  .hero-name {
+    font-family: var(--display);
+    font-weight: 600;
+    line-height: 0.92;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .hero-name .line {
+    display: block;
+    overflow: hidden;
+    font-size: clamp(64px, 10vw, 148px);
+  }
+  .hero-name .line span.txt {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .hero-name .line:nth-child(2) span.txt { animation-delay: .12s; }
+  .hero-name .line .ital {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: var(--accent);
+    letter-spacing: -0.005em;
+    margin-left: 0.05em;
+    font-size: 0.78em;
+    vertical-align: 0.06em;
+  }
+  .hero-name .dot { color: var(--accent); }
+  @keyframes rise { to { transform: translateY(0); } }
+
+  .hero-strap {
+    margin-top: 48px;
+    font-size: clamp(16px, 1.55vw, 19px);
+    color: var(--ink-2);
+    max-width: 580px;
+    line-height: 1.6;
+  }
+  .hero-actions { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 16px 26px;
+    border-radius: 999px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    transition: all .3s ease;
+  }
+  .btn.primary { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
+  .btn.primary:hover { background: transparent; color: var(--ink); }
+  .btn.ghost { border: 1px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn .arr {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: currentColor;
+  }
+  .btn .arr::before {
+    content: "↗"; color: var(--paper); font-family: var(--display); font-size: 14px;
+  }
+  .btn.ghost .arr::before { color: var(--ink); }
+  .btn.primary:hover .arr::before { color: var(--ink); }
+
+  /* Portrait card */
+  .portrait-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: var(--ink);
+    border-radius: 8px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform .3s ease;
+    box-shadow: 0 30px 60px -30px rgba(13,27,42,.45);
+  }
+  .portrait-card .photo {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 35%, #2a3850 0%, #0d1b2a 70%);
+    background-size: cover;
+    background-position: center top;
+    background-image: url('assets/portrait.jpg');
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  /* Subtle overlay to keep meta-tag readable */
+  .portrait-card .photo::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 40%;
+    background: linear-gradient(to top, rgba(13,27,42,0.7) 0%, rgba(13,27,42,0) 100%);
+    pointer-events: none;
+  }
+  .portrait-card .frame {
+    position: absolute; inset: 16px;
+    border: 1px solid rgba(245, 241, 234, 0.25);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .portrait-card .corners::before,
+  .portrait-card .corners::after,
+  .portrait-card .corners > span::before,
+  .portrait-card .corners > span::after {
+    content: ""; position: absolute; width: 22px; height: 22px;
+    border: 2px solid var(--bronze-soft);
+  }
+  .portrait-card .corners::before { top: 24px; left: 24px; border-right: 0; border-bottom: 0; }
+  .portrait-card .corners::after { top: 24px; right: 24px; border-left: 0; border-bottom: 0; }
+  .portrait-card .corners > span::before { bottom: 24px; left: 24px; border-right: 0; border-top: 0; }
+  .portrait-card .corners > span::after { bottom: 24px; right: 24px; border-left: 0; border-top: 0; }
+  .portrait-card .meta-tag {
+    position: absolute; left: 24px; bottom: 24px; right: 24px;
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    display: flex; justify-content: space-between; align-items: end;
+    z-index: 3;
+  }
+  .portrait-card .meta-tag .name {
+    font-family: var(--display); font-size: 22px; letter-spacing: 0.02em;
+    line-height: 1; color: var(--paper);
+    text-transform: uppercase;
+  }
+  .portrait-card .meta-tag .role { color: var(--bronze-soft); margin-top: 6px; }
+  .portrait-rotate { perspective: 1200px; }
+  .portrait-rotate .portrait-card {
+    transform: rotateY(var(--rx, 0deg)) rotateX(var(--ry, 0deg));
+  }
+
+  .hero-foot {
+    margin-top: 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .availability .dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: #2f8a4d; margin-right: 8px; vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(47,138,77,.5); }
+    50% { box-shadow: 0 0 0 8px rgba(47,138,77,0); }
+  }
+
+  @media (max-width: 900px) {
+    .hero-meta { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hero-main { grid-template-columns: 1fr; gap: 40px; }
+    .hero-foot { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero-name .line { font-size: clamp(56px, 16vw, 96px); }
+  }
+
+  /* =================== Marquee =================== */
+  .marquee {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    background: var(--paper-2);
+    padding: 22px 0;
+  }
+  .marquee-track {
+    display: flex; gap: 56px; white-space: nowrap;
+    animation: scroll 50s linear infinite;
+    font-family: var(--display);
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .marquee-track .star { color: var(--accent); margin: 0 36px; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* =================== Summary =================== */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .summary-grid p {
+    font-size: clamp(18px, 1.7vw, 22px);
+    color: var(--ink-2);
+    margin-bottom: 24px;
+    max-width: 720px;
+    line-height: 1.6;
+  }
+  .summary-grid p strong { color: var(--ink); font-weight: 600; }
+  .summary-stats {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    border-top: 1px solid var(--rule);
+    padding-top: 32px;
+  }
+  .stat .num {
+    font-family: var(--display);
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    color: var(--ink);
+  }
+  .stat .num .small { font-size: 0.45em; color: var(--muted); margin-left: 4px; }
+  .stat .label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-top: 14px;
+    line-height: 1.5;
+  }
+  @media (max-width: 900px) {
+    .summary-grid { grid-template-columns: 1fr; gap: 32px; }
+    .summary-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* =================== Featured Projects =================== */
+  .featured-list { display: flex; flex-direction: column; gap: 96px; margin-top: 80px; }
+  .featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    cursor: pointer;
+  }
+  .featured.reverse { direction: rtl; }
+  .featured.reverse > * { direction: ltr; }
+  .featured-img {
+    position: relative;
+    aspect-ratio: 5/4;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--paper-3);
+    transition: transform .6s cubic-bezier(.2,.7,.2,1);
+    border: 1px solid var(--rule);
+  }
+  /* IMPORTANT: contain so images are never cut. Padding gives breathing room around the artwork. */
+  .featured-img img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    background: var(--paper-3);
+    padding: 16px;
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .featured:hover .featured-img img { transform: scale(1.03); }
+  .featured-tag {
+    position: absolute; top: 24px; left: 24px;
+    background: var(--bronze);
+    color: var(--paper);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 14px; border-radius: 999px;
+    z-index: 2;
+  }
+  .featured-num {
+    font-family: var(--mono); color: var(--muted); font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+  .featured-text h3 {
+    font-size: clamp(36px, 4.5vw, 60px);
+    margin: 16px 0 24px;
+    line-height: 0.95;
+  }
+  .featured-text .pills {
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 28px;
+  }
+  .featured-text .pill {
+    border: 1px solid var(--rule);
+    padding: 7px 14px; border-radius: 999px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    color: var(--ink-2);
+  }
+  .featured-text p { color: var(--ink-2); font-size: 16px; max-width: 56ch; line-height: 1.65; }
+  .featured-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-top: 28px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border-bottom: 1px solid var(--ink); padding-bottom: 6px;
+    transition: all .25s ease;
+  }
+  .featured:hover .featured-cta { color: var(--accent); border-color: var(--accent); }
+  .featured-cta .arr { transition: transform .3s ease; }
+  .featured:hover .featured-cta .arr { transform: translate(3px, -3px); }
+  @media (max-width: 900px) {
+    .featured, .featured.reverse { grid-template-columns: 1fr; direction: ltr; }
+  }
+
+  /* =================== All Projects Grid =================== */
+  .all-projects-toggle {
+    text-align: center; margin: 80px 0 0;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+    overflow: hidden;
+    transition: max-height .8s cubic-bezier(.2,.7,.2,1), opacity .5s ease;
+    max-height: 0;
+    opacity: 0;
+  }
+  .projects-grid.visible {
+    max-height: 4000px;
+    opacity: 1;
+  }
+  .project-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease;
+    display: flex; flex-direction: column;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -24px rgba(13,27,42,.25);
+  }
+  .project-card .thumb {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+    background: var(--paper-3);
+    border-bottom: 1px solid var(--rule);
+  }
+  .project-card .thumb img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 12px;
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .project-card:hover .thumb img { transform: scale(1.04); }
+  .project-card .body { padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+  .project-card .tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .project-card h4 {
+    font-family: var(--display); font-size: 22px; text-transform: uppercase;
+    margin: 12px 0 10px; line-height: 1; letter-spacing: 0.01em;
+  }
+  .project-card p { color: var(--ink-2); font-size: 14px; max-width: 55ch; flex: 1; }
+  .project-card .meta {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 22px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .project-card .meta .arrow {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--ink); color: var(--paper);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: transform .3s ease;
+  }
+  .project-card:hover .meta .arrow { transform: rotate(-45deg); background: var(--accent); }
+  @media (max-width: 900px) { .projects-grid { grid-template-columns: 1fr; } }
+
+  /* =================== Industry Exposure =================== */
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .industry-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all .4s ease;
+    cursor: pointer;
+  }
+  .industry-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(13,27,42,.25); }
+  .industry-card .img {
+    aspect-ratio: 16/10; overflow: hidden;
+    background: var(--ink);
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+  .industry-card .img img {
+    width: 100%; height: 100%; object-fit: contain;
+    background: var(--ink); padding: 8px;
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .industry-card:hover .img img { transform: scale(1.04); }
+  .industry-card.no-image .img {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .industry-card.no-image .img::before {
+    content: attr(data-mark);
+    color: var(--bronze-soft);
+    font-family: var(--display); font-size: 80px; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .industry-card .body { padding: 28px 30px 32px; }
+  .industry-card .visit {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .industry-card h4 {
+    font-family: var(--display); font-size: 26px; text-transform: uppercase;
+    margin: 12px 0 10px; line-height: 1;
+  }
+  .industry-card p { color: var(--ink-2); font-size: 14px; }
+  @media (max-width: 900px) { .industry-grid { grid-template-columns: 1fr; } }
+
+  /* =================== Skills =================== */
+  .skills-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 60px;
+  }
+  .skill-group { margin-bottom: 36px; }
+  .skill-group h4 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 18px; padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+    font-weight: 500;
+  }
+  .skill-group .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-group .pill {
+    font-family: var(--body); font-size: 14px;
+    border: 1px solid var(--rule);
+    padding: 8px 14px;
+    border-radius: 4px;
+    background: transparent;
+    transition: all .25s ease;
+  }
+  .skill-group .pill:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+  @media (max-width: 900px) { .skills-wrap { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* =================== Tools =================== */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    margin-top: 60px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .tool-cell {
+    background: var(--paper);
+    padding: 36px 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: background .3s ease;
+    aspect-ratio: 1.4/1;
+  }
+  .tool-cell:hover { background: var(--paper-2); }
+  .tool-cell .name {
+    font-family: var(--display); font-size: clamp(14px, 1.4vw, 18px);
+    text-transform: uppercase; line-height: 1; letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .tool-cell .cat {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-top: 8px;
+  }
+  @media (max-width: 900px) { .tools-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  /* =================== Extracurricular =================== */
+  .extra-list {
+    margin-top: 60px;
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .extra-card {
+    display: grid;
+    grid-template-columns: 200px 1fr 240px;
+    gap: 32px;
+    align-items: center;
+    padding: 32px;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all .4s ease;
+  }
+  .extra-card:hover {
+    transform: translateY(-2px);
+    background: var(--paper-3);
+    box-shadow: 0 24px 48px -24px rgba(13,27,42,.18);
+  }
+  .extra-card .when {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .extra-card h4 {
+    font-family: var(--display); font-size: clamp(22px, 2.4vw, 30px);
+    text-transform: uppercase; letter-spacing: 0.01em;
+    margin-bottom: 10px;
+  }
+  .extra-card p { color: var(--ink-2); font-size: 15px; max-width: 60ch; }
+  .extra-card .preview {
+    display: flex; gap: 8px; justify-content: flex-end;
+  }
+  .extra-card .preview .pic {
+    width: 64px; height: 64px;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .extra-card .preview .pic img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .extra-card .preview .more {
+    width: 64px; height: 64px;
+    background: var(--ink); color: var(--paper);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 4px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    transition: background .3s ease;
+  }
+  .extra-card:hover .preview .more { background: var(--accent); }
+  @media (max-width: 900px) {
+    .extra-card { grid-template-columns: 1fr; gap: 16px; }
+    .extra-card .preview { justify-content: flex-start; }
+  }
+
+  /* =================== Awards =================== */
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .award {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    padding: 36px 32px;
+    border-radius: var(--radius);
+    transition: all .3s ease;
+  }
+  .award:hover {
+    background: var(--ink); color: var(--paper);
+    border-color: var(--ink);
+    transform: translateY(-4px);
+  }
+  .award:hover .award-year { color: var(--bronze-soft); }
+  .award:hover .award-org { color: var(--paper); opacity: .7; }
+  .award-year {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    color: var(--bronze); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .award h4 {
+    font-family: var(--display); font-size: clamp(20px, 2vw, 26px);
+    text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.01em;
+  }
+  .award-org {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  @media (max-width: 900px) { .awards-grid { grid-template-columns: 1fr; } }
+
+  /* =================== Footer =================== */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 0 32px;
+    border-top: 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  footer h2 { color: var(--paper); }
+  footer .footer-links { list-style: none; }
+  footer .footer-links li {
+    padding: 12px 0;
+    border-bottom: 1px solid #1c2c40;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  footer .footer-links li a { display: block; transition: color .25s; color: var(--paper); }
+  footer .footer-links li a:hover { color: var(--bronze-soft); }
+  footer .footer-links h5 {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    color: var(--bronze-soft); text-transform: uppercase;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid #1c2c40;
+    font-weight: 500;
+  }
+  .big-name {
+    font-family: var(--display);
+    font-size: clamp(80px, 16vw, 240px);
+    line-height: 0.85;
+    text-transform: uppercase;
+    margin-top: 60px;
+    color: var(--paper);
+    letter-spacing: -0.02em;
+    overflow: hidden;
+  }
+  .footer-bot {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #1c2c40;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  /* =================== Reveal animations =================== */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal.delay-1 { transition-delay: .1s; }
+  .reveal.delay-2 { transition-delay: .2s; }
+  .reveal.delay-3 { transition-delay: .3s; }
+
+  /* =================== Modal =================== */
+  .modal-bg {
+    position: fixed; inset: 0;
+    background: rgba(13, 27, 42, 0.86);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    opacity: 0; pointer-events: none;
+    transition: opacity .4s ease;
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px 20px;
+  }
+  .modal-bg.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--paper);
+    width: min(1100px, 100%);
+    max-height: 92vh; overflow-y: auto;
+    border-radius: 8px;
+    transform: translateY(40px) scale(.97);
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+    position: relative;
+  }
+  .modal-bg.open .modal { transform: none; }
+  .modal-close {
+    position: sticky; top: 16px; left: 100%;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ink); color: var(--paper);
+    border: 0; display: flex; align-items: center; justify-content: center;
+    margin: 16px 16px 0 auto;
+    font-size: 22px;
+    z-index: 10;
+    transition: background .25s;
+  }
+  .modal-close:hover { background: var(--accent); }
+  /* Modal hero: contain so the whole image is visible. Background tinted to look intentional. */
+  .modal-hero {
+    aspect-ratio: 16/9;
+    background: var(--paper-3);
+    overflow: hidden; position: relative;
+    margin-top: -60px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .modal-hero img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 24px;
+    background: var(--paper-3);
+  }
+  .modal-body { padding: 48px 56px 56px; }
+  .modal-eyebrow {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .modal-body h2 {
+    font-size: clamp(36px, 4vw, 56px);
+    margin: 14px 0 24px;
+  }
+  .modal-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 32px;
+  }
+  .modal-meta div {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .modal-meta div span {
+    display: block; color: var(--ink); font-family: var(--body);
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+    margin-top: 6px; font-weight: 500;
+  }
+  .modal-body p {
+    font-size: 16px; color: var(--ink-2);
+    margin-bottom: 18px; line-height: 1.7;
+    max-width: 70ch;
+  }
+  .modal-body h3 {
+    margin: 32px 0 14px; font-size: 22px;
+  }
+  .modal-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .modal-pills .pill {
+    font-family: var(--mono); font-size: 11px;
+    border: 1px solid var(--rule); padding: 7px 14px;
+    border-radius: 999px; color: var(--ink-2);
+  }
+  /* Gallery: contain so nothing is cropped. Auto rows so different aspect images sit side by side. */
+  .modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .modal-gallery .gimg {
+    overflow: hidden;
+    background: var(--paper-3);
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-gallery .gimg img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 8px;
+  }
+  .modal-gallery .gimg.full { grid-column: span 2; aspect-ratio: 16/9; }
+  @media (max-width: 700px) {
+    .modal-body { padding: 24px; }
+    .modal-meta { grid-template-columns: 1fr 1fr; }
+    .modal-gallery { grid-template-columns: 1fr; }
+    .modal-gallery .gimg.full { grid-column: span 1; }
+  }
+
+  /* Hint banner for portrait swap */
+  .portrait-hint {
+    position: absolute; left: 24px; right: 24px; top: 24px;
+    z-index: 4;
+    color: var(--bronze-soft);
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; opacity: 0.7;
+    background: rgba(13,27,42,.6);
+    padding: 8px 12px; border-radius: 4px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Cursor */
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent);
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    transition: transform .2s ease, width .25s ease, height .25s ease, background .25s ease;
+  }
+  .cursor.big { width: 44px; height: 44px; background: var(--bronze-soft); opacity: .55; }
+  @media (hover: none) { .cursor { display: none; } }
+
+  .center { text-align: center; }
+  .lead { color: var(--ink-2); max-width: 64ch; margin-top: 24px; font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <a href="#top" class="logo">LP<span class="dot">.</span></a>
+  <ul>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#featured">Projects</a></li>
+    <li><a href="#industry">Industry</a></li>
+    <li><a href="#extra">Activities</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <a href="assets/Lakshya_Pant_CV.pdf" download="Lakshya_Pant_CV.pdf" class="cta cta-cv">Download CV ↓</a>
+    <a href="#contact" class="cta">Get in touch →</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="top" class="hero wrap">
+  <div>
+    <div class="hero-meta">
+      <div>Role <span>Seeking UK Graduate Engineering Roles</span></div>
+      <div>Status <span>BEng (Hons) Mechanical Engineering Graduate</span></div>
+      <div>Location <span>Chelmsford, UK. Open to relocate</span></div>
+      <div>Year <span>2026</span></div>
+    </div>
+  </div>
+
+  <div class="hero-main">
+    <div class="hero-text">
+      <h1 class="hero-name">
+        <span class="line"><span class="txt">Lakshya</span></span>
+        <span class="line"><span class="txt">Pant<span class="dot">.</span></span></span>
+      </h1>
+      <p class="hero-strap">
+        BEng (Hons) Mechanical Engineering graduate at Anglia Ruskin University.
+        I work across <strong>CAD design</strong>, <strong>FEA / CFD simulation</strong>
+        and <strong>DFMA-led iteration</strong>, with current responsibility for the
+        drive system on ARU's IMechE Railway Challenge prototype as part of Team Heron.
+      </p>
+      <div class="hero-actions">
+        <a href="#featured" class="btn primary">View Projects <span class="arr"></span></a>
+        <a href="assets/Lakshya_Pant_CV.pdf" download="Lakshya_Pant_CV.pdf" class="btn ghost btn-cv">Download CV (PDF) <span class="arr arr-down"></span></a>
+        <a href="#contact" class="btn ghost">Get in touch <span class="arr"></span></a>
+      </div>
+    </div>
+
+    <div class="portrait-rotate" id="portrait-rotate">
+      <div class="portrait-card">
+        <div class="photo"></div>
+        <div class="frame"></div>
+        <div class="corners"><span></span></div>
+        <div class="meta-tag">
+          <div>
+            <div class="name">Lakshya Pant</div>
+            <div class="role">Graduate Mechanical Engineer</div>
+          </div>
+          <div>2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="availability"><span class="dot"></span>Available. UK Graduate Schemes 2026</div>
+    <div>Scroll to explore ↓</div>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>CAD Design <span class="star">✦</span></span>
+    <span>FEA <span class="star">✦</span></span>
+    <span>CFD <span class="star">✦</span></span>
+    <span>ANSYS <span class="star">✦</span></span>
+    <span>SolidWorks <span class="star">✦</span></span>
+    <span>MATLAB <span class="star">✦</span></span>
+    <span>DFMA <span class="star">✦</span></span>
+    <span>Mechanical Design <span class="star">✦</span></span>
+    <span>Simulation <span class="star">✦</span></span>
+    <span>Validation <span class="star">✦</span></span>
+    <span>CAD Design <span class="star">✦</span></span>
+    <span>FEA <span class="star">✦</span></span>
+    <span>CFD <span class="star">✦</span></span>
+    <span>ANSYS <span class="star">✦</span></span>
+    <span>SolidWorks <span class="star">✦</span></span>
+    <span>MATLAB <span class="star">✦</span></span>
+    <span>DFMA <span class="star">✦</span></span>
+    <span>Mechanical Design <span class="star">✦</span></span>
+    <span>Simulation <span class="star">✦</span></span>
+    <span>Validation <span class="star">✦</span></span>
+  </div>
+</div>
+
+<!-- ============ SUMMARY ============ -->
+<section id="summary">
+  <div class="wrap">
+    <div class="summary-grid">
+      <div class="reveal">
+        <p class="eyebrow">01 / Summary</p>
+        <h2 style="margin-top: 24px;">At a<br/>glance.</h2>
+      </div>
+      <div class="reveal delay-1">
+        <p>
+          I'm Lakshya Pant. A <strong>BEng (Hons) Mechanical Engineering</strong>
+          graduate from Anglia Ruskin University.
+        </p>
+        <p>
+          My focus is <strong>design-led engineering supported by simulation</strong>.
+          I take concepts from CAD modelling through FEA, CFD and fatigue analysis to
+          manufacturable, evidenced designs. I work in AutoCAD, SolidWorks, Fusion 360,
+          ANSYS (Mechanical, Fluent, SpaceClaim, Discovery), MATLAB, Simulink and Qblade.
+        </p>
+        <p>
+          Outside coursework I'm <strong>Treasurer of the ARU STEM Society</strong>,
+          a core member of <strong>IMechE Railway Challenge Team Heron</strong>, and
+          have spent industry days at Ford Dunton, BAE Systems, CNH Industrial,
+          ANB Sensors and Ipeco Limited.
+        </p>
+
+        <div class="summary-stats">
+          <div class="stat reveal delay-1">
+            <div class="num" data-count="9"><span class="small">+</span></div>
+            <div class="label">Engineering<br/>Projects</div>
+          </div>
+          <div class="stat reveal delay-2">
+            <div class="num" data-count="5"><span class="small"></span></div>
+            <div class="label">Industry<br/>Visits</div>
+          </div>
+          <div class="stat reveal delay-3">
+            <div class="num" data-count="2"><span class="small"></span></div>
+            <div class="label">Leadership<br/>Roles</div>
+          </div>
+          <div class="stat reveal delay-3">
+            <div class="num" data-count="1"><span class="small">×</span></div>
+            <div class="label">Best Poster<br/>Award. ARU</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+<section id="featured">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">02 / Featured Work</p>
+      <h2 style="margin-top: 24px;">Featured<br/>projects.</h2>
+      <p class="lead">
+        Three projects I've put the most rigour into. Design, simulation and
+        manufacturability worked end to end. Click any project to open the full
+        case with photos and detail.
+      </p>
+    </div>
+
+    <div class="featured-list">
+
+      <article class="featured reveal" data-project="drive">
+        <div class="featured-img">
+          <span class="featured-tag">Featured. 01</span>
+          <img src="assets/drive_selected_a.jpg" alt="Selected drive system design" loading="lazy"/>
+        </div>
+        <div class="featured-text">
+          <span class="featured-num">01. Drivetrain Design</span>
+          <h3>Drive System for Railway Vehicles</h3>
+          <div class="pills">
+            <span class="pill">AutoCAD</span>
+            <span class="pill">Drivetrain</span>
+            <span class="pill">IMechE Railway Challenge</span>
+            <span class="pill">Team Heron</span>
+          </div>
+          <p>
+            Designed and evaluated four mechanical drive system concepts for our
+            IMechE Railway Challenge prototype train: chain drive, two-stage and
+            three-stage speed reduction gearboxes. Performed torque, ratio and
+            speed calculations for each. The final selected design feeds power
+            transmission, durability and energy efficiency targets into a
+            manufacturable assembly with a documented lubrication strategy.
+          </p>
+          <span class="featured-cta">Open project <span class="arr">↗</span></span>
+        </div>
+      </article>
+
+      <article class="featured reverse reveal" data-project="hvac">
+        <div class="featured-img">
+          <span class="featured-tag">Featured. 02</span>
+          <img src="assets/hvac_assembly_b.jpg" alt="HVAC duct assembly" loading="lazy"/>
+        </div>
+        <div class="featured-text">
+          <span class="featured-num">02. CFD &amp; Thermal</span>
+          <h3>Automotive HVAC Air Duct System</h3>
+          <div class="pills">
+            <span class="pill">ANSYS Fluent</span>
+            <span class="pill">Discovery</span>
+            <span class="pill">CFD</span>
+            <span class="pill">Simulink</span>
+          </div>
+          <p>
+            Designed an automotive HVAC air duct system in CAD with optimised
+            flow routing, focusing on airflow distribution, pressure loss
+            reduction and thermal performance. Verified against pressure drop
+            and temperature targets using ANSYS Discovery, Fluent CFD and
+            Simulink. Iterated duct geometry to improve outlet velocity
+            uniformity and split balance.
+          </p>
+          <span class="featured-cta">Open project <span class="arr">↗</span></span>
+        </div>
+      </article>
+
+      <article class="featured reveal" data-project="feadrone">
+        <div class="featured-img">
+          <span class="featured-tag">Featured. 03</span>
+          <img src="assets/feadrone_assembled.jpg" alt="Final assembled drone" loading="lazy"/>
+        </div>
+        <div class="featured-text">
+          <span class="featured-num">03. FEA &amp; Optimisation</span>
+          <h3>FEA Simulation for Drone Design</h3>
+          <div class="pills">
+            <span class="pill">ANSYS Mechanical</span>
+            <span class="pill">SpaceClaim</span>
+            <span class="pill">Witness</span>
+            <span class="pill">Bambu Studio</span>
+          </div>
+          <p>
+            Optimised a drone design through FEA in ANSYS, SpaceClaim and
+            Discovery to make it lightweight and structurally sound. Ran stress
+            and strain analyses across iterations to maximise the
+            strength to weight ratio, designed an innovative twist and turn
+            locking mechanism for the chassis, and explored additive
+            manufacturing simulations to ensure the design was production ready.
+          </p>
+          <span class="featured-cta">Open project <span class="arr">↗</span></span>
+        </div>
+      </article>
+    </div>
+
+    <div class="all-projects-toggle reveal">
+      <button class="btn ghost" id="toggle-all">View All Projects <span class="arr"></span></button>
+    </div>
+
+    <div class="projects-grid" id="projects-grid">
+      <article class="project-card" data-project="windturbine">
+        <div class="thumb"><img src="assets/wind_results.jpg" alt="Wind turbine analysis" loading="lazy"/></div>
+        <div class="body">
+          <span class="tag">Structural. Fatigue. Aerodynamics</span>
+          <h4>Wind Turbine Blade Analysis</h4>
+          <p>NREL 5MW reference blade. Qblade aerodynamics, ANSYS FEA, Goodman and Miner fatigue.</p>
+          <div class="meta"><span>Jan 2026. May 2026</span><span class="arrow">↗</span></div>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="dfmadrone">
+        <div class="thumb"><img src="assets/dfma_drone_overview.jpg" alt="DFMA drone" loading="lazy"/></div>
+        <div class="body">
+          <span class="tag">DFMA. Boothroyd Dewhurst</span>
+          <h4>Drone DFMA &amp; Structural</h4>
+          <p>Boothroyd Dewhurst DFMA reduced part count by ~20% while holding structural performance.</p>
+          <div class="meta"><span>Jan 2025. May 2025</span><span class="arrow">↗</span></div>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="joystick">
+        <div class="thumb"><img src="assets/joystick_assembled_a.jpg" alt="Joystick assembly" loading="lazy"/></div>
+        <div class="body">
+          <span class="tag">CAD. Manufacturing</span>
+          <h4>Joystick Mechanism</h4>
+          <p>Manufactured ±45° joystick from CAD using milling, turning and drill press operations.</p>
+          <div class="meta"><span>Jan 2024. May 2024</span><span class="arrow">↗</span></div>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="leafspring">
+        <div class="thumb"><img src="assets/leaf_vonmises.jpg" alt="Leaf spring von Mises" loading="lazy"/></div>
+        <div class="body">
+          <span class="tag">FEA. Suspension</span>
+          <h4>Leaf Spring Design &amp; FEA</h4>
+          <p>Semi elliptical leaf spring designed in Inventor, validated with static FEA in ANSYS.</p>
+          <div class="meta"><span>2024. 2025</span><span class="arrow">↗</span></div>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="strawberry">
+        <div class="thumb"><img src="assets/strawberry_assy.jpg" alt="Strawberry cutter" loading="lazy"/></div>
+        <div class="body">
+          <span class="tag">CAD. Mechanism Design</span>
+          <h4>Strawberry Cutter Mechanism</h4>
+          <p>Y axis controlled cutter rig designed for consistent and accurate cutting.</p>
+          <div class="meta"><span>Sep 2024. Dec 2024</span><span class="arrow">↗</span></div>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="heat">
+        <div class="thumb"><img src="assets/heat_result.jpg" alt="2D heat conduction" loading="lazy"/></div>
+        <div class="body">
+          <span class="tag">Numerical Methods. MATLAB</span>
+          <h4>2D Heat Conduction</h4>
+          <p>Steady state heat conduction through carbon steel solved with the Finite Difference Method.</p>
+          <div class="meta"><span>Jan 2025. May 2025</span><span class="arrow">↗</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRY EXPOSURE ============ -->
+<section id="industry">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">03 / Beyond the Classroom</p>
+      <h2 style="margin-top: 24px;">Industry<br/>exposure.</h2>
+      <p class="lead">
+        Site visits, technical talks and behind the scenes engineering tours
+        with UK industry partners. Building context for what graduate engineers
+        actually do day to day across automotive, defence, agricultural,
+        sensors and aerospace seating.
+      </p>
+    </div>
+
+    <div class="industry-grid">
+      <article class="industry-card reveal" data-extra="ford">
+        <div class="img"><img src="assets/industry_ford.jpg" alt="Ford Dunton visit" loading="lazy"/></div>
+        <div class="body">
+          <span class="visit">Site Visit. 2025</span>
+          <h4>Ford. Dunton</h4>
+          <p>Tour of Ford's UK technical centre at Dunton. Automotive R&amp;D, vehicle development and powertrain engineering.</p>
+        </div>
+      </article>
+
+      <article class="industry-card reveal delay-1" data-extra="bae">
+        <div class="img"><img src="assets/industry_bae.jpg" alt="BAE Systems visit" loading="lazy"/></div>
+        <div class="body">
+          <span class="visit">Site Visit. 2025</span>
+          <h4>BAE Systems</h4>
+          <p>Defence engineering and advanced manufacturing. Exposure to large programme systems engineering and graduate scheme pathways.</p>
+        </div>
+      </article>
+
+      <article class="industry-card reveal delay-2" data-extra="cnh">
+        <div class="img"><img src="assets/industry_cnh_a.jpg" alt="CNH Industrial visit" loading="lazy"/></div>
+        <div class="body">
+          <span class="visit">Site Visit. 2025</span>
+          <h4>CNH Industrial</h4>
+          <p>Agricultural and construction equipment manufacturing. Drivetrain systems, hydraulics and assembly line engineering in practice.</p>
+        </div>
+      </article>
+
+      <article class="industry-card no-image reveal" data-mark="A" data-extra="anb">
+        <div class="img"></div>
+        <div class="body">
+          <span class="visit">Industry Talk. 2025</span>
+          <h4>ANB Sensors</h4>
+          <p>Sensor technology company. Engineering applications in measurement, calibration and water quality monitoring.</p>
+        </div>
+      </article>
+
+      <article class="industry-card no-image reveal delay-1" data-mark="I" data-extra="ipeco">
+        <div class="img"></div>
+        <div class="body">
+          <span class="visit">Industry Talk. 2025</span>
+          <h4>Ipeco Limited</h4>
+          <p>Aerospace seating and electronic systems. Manufacturing standards, certification and product development for civil and military aviation.</p>
+        </div>
+      </article>
+
+      <article class="industry-card no-image reveal delay-2" data-mark="✦">
+        <div class="img"></div>
+        <div class="body">
+          <span class="visit">Learning</span>
+          <h4>Beyond the Classroom</h4>
+          <p>Industry exposure that complements coursework. Bridging textbook engineering with what practising engineers actually deliver.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXTRACURRICULAR ============ -->
+<section id="extra">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">04 / Activities</p>
+      <h2 style="margin-top: 24px;">Leadership<br/>&amp; activities.</h2>
+      <p class="lead">
+        Roles that have built my project management, financial responsibility,
+        public engagement and team working skills alongside my degree. Click any
+        card to see photos.
+      </p>
+    </div>
+
+    <div class="extra-list">
+      <article class="extra-card reveal" data-extra="poster">
+        <div>
+          <div class="when">2026. Award</div>
+        </div>
+        <div>
+          <h4>Best Poster Award. ARU End of Year Show</h4>
+          <p>Won the poster presentation award at Anglia Ruskin University's Engineering End of Year Show for my dissertation project. Presented to industry sectors and academic panel.</p>
+        </div>
+        <div class="preview">
+          <div class="pic"><img src="assets/poster_award_a.jpg" alt=""/></div>
+          <div class="pic"><img src="assets/poster_award_b.jpg" alt=""/></div>
+          <div class="more">+1</div>
+        </div>
+      </article>
+
+      <article class="extra-card reveal delay-1" data-extra="hack1">
+        <div>
+          <div class="when">2024. Organiser</div>
+        </div>
+        <div>
+          <h4>STEM Hackathon. Season 1</h4>
+          <p>Co organised the inaugural ARU STEM Society hackathon as Treasurer. Managed budgets, sponsor coordination, logistics and on the day delivery across the multi campus event.</p>
+        </div>
+        <div class="preview">
+          <div class="pic"><img src="assets/hack1_a.jpg" alt=""/></div>
+          <div class="pic"><img src="assets/hack1_b.jpg" alt=""/></div>
+          <div class="more">+1</div>
+        </div>
+      </article>
+
+      <article class="extra-card reveal" data-extra="hack2">
+        <div>
+          <div class="when">2025. Organiser</div>
+        </div>
+        <div>
+          <h4>STEM Hackathon. Season 2</h4>
+          <p>Scaled the hackathon across three ARU campuses (Cambridge, Chelmsford, Peterborough). Broader sponsor base, larger participant pool and tighter financial reporting.</p>
+        </div>
+        <div class="preview">
+          <div class="pic"><img src="assets/hack2_a.jpg" alt=""/></div>
+          <div class="pic"><img src="assets/hack2_b.jpg" alt=""/></div>
+          <div class="more">+1</div>
+        </div>
+      </article>
+
+      <article class="extra-card reveal delay-1" data-extra="debate">
+        <div>
+          <div class="when">2025. Organiser</div>
+        </div>
+        <div>
+          <h4>IMechE Debate Competition</h4>
+          <p>Organised the IMechE debate competition for the ARU STEM Society. Coordinated logistics, panel of practising engineers, motion selection and on the day delivery for the student teams competing on engineering policy, professional ethics and industry direction.</p>
+        </div>
+        <div class="preview">
+          <div class="pic"><img src="assets/imeche_debate_a.jpg" alt=""/></div>
+          <div class="pic"><img src="assets/imeche_debate_b.jpg" alt=""/></div>
+          <div class="more">+1</div>
+        </div>
+      </article>
+
+      <article class="extra-card reveal" data-extra="festival">
+        <div>
+          <div class="when">Oct 2024. Volunteer</div>
+        </div>
+        <div>
+          <h4>Chelmsford Science &amp; Engineering Festival</h4>
+          <p>Volunteered at the Chelmsford festival communicating engineering concepts to a non technical public audience. Workshop delivery, exhibit setup and visitor engagement.</p>
+        </div>
+        <div class="preview">
+          <div class="pic"><img src="assets/festival_a.jpg" alt=""/></div>
+          <div class="pic"><img src="assets/festival_b.jpg" alt=""/></div>
+          <div class="more">+3</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">05 / Capabilities</p>
+      <h2 style="margin-top: 24px;">Skills.</h2>
+    </div>
+    <div class="skills-wrap">
+      <div class="reveal">
+        <p class="lead" style="margin-top:0;">
+          Grouped by how I'd actually apply them on a graduate engineering team.
+          From end to end CAD to simulation workflows through to the soft skills
+          that make a project actually ship.
+        </p>
+      </div>
+      <div class="reveal delay-1">
+        <div class="skill-group">
+          <h4>Technical</h4>
+          <div class="pills">
+            <span class="pill">AutoCAD</span>
+            <span class="pill">MATLAB</span>
+            <span class="pill">Simulink</span>
+            <span class="pill">ANSYS (FEA, CFD)</span>
+            <span class="pill">Autodesk Inventor</span>
+            <span class="pill">Fusion 360</span>
+            <span class="pill">SolidWorks</span>
+            <span class="pill">Qblade</span>
+            <span class="pill">ANSYS SpaceClaim</span>
+            <span class="pill">ANSYS Discovery</span>
+            <span class="pill">3D CAD Modelling</span>
+            <span class="pill">Engineering Drawings</span>
+            <span class="pill">Manufacturing Documentation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>IT Skills</h4>
+          <div class="pills">
+            <span class="pill">Excel (Advanced)</span>
+            <span class="pill">PowerPoint</span>
+            <span class="pill">Microsoft Word</span>
+            <span class="pill">Microsoft Project</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Engineering</h4>
+          <div class="pills">
+            <span class="pill">Mechanical Design</span>
+            <span class="pill">Manufacturing Design</span>
+            <span class="pill">HVAC &amp; Airflow Analysis</span>
+            <span class="pill">Drivetrain Systems</span>
+            <span class="pill">Structural Analysis</span>
+            <span class="pill">DFMA</span>
+            <span class="pill">CAD to Manufacture Workflows</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Simulation &amp; Analysis</h4>
+          <div class="pills">
+            <span class="pill">End to end CFD/FEA Setup</span>
+            <span class="pill">Advanced Boundary Conditions</span>
+            <span class="pill">Mesh Refinement</span>
+            <span class="pill">Result Interpretation</span>
+            <span class="pill">Process Data Analysis</span>
+            <span class="pill">Result Documentation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Analytical</h4>
+          <div class="pills">
+            <span class="pill">Problem Solving</span>
+            <span class="pill">Data Analysis</span>
+            <span class="pill">Test Result Interpretation</span>
+            <span class="pill">Design Evaluation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Professional</h4>
+          <div class="pills">
+            <span class="pill">Technical Reporting</span>
+            <span class="pill">Engineering Documentation</span>
+            <span class="pill">Project Budgeting</span>
+            <span class="pill">Stakeholder Engagement</span>
+            <span class="pill">Regulatory Compliance</span>
+            <span class="pill">Positive Attitude</span>
+            <span class="pill">Time Management</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Leadership &amp; Teamwork</h4>
+          <div class="pills">
+            <span class="pill">Team Collaboration</span>
+            <span class="pill">Project Coordination</span>
+            <span class="pill">Event Organisation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section id="tools" style="border-top: 1px solid var(--rule); padding-top: 100px;">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">06 / Toolset</p>
+      <h2 style="margin-top: 24px;">Tools<br/>I work in.</h2>
+    </div>
+
+    <div class="tools-grid reveal delay-1">
+      <div class="tool-cell"><span class="name">AutoCAD</span><span class="cat">CAD. 2D/3D</span></div>
+      <div class="tool-cell"><span class="name">SolidWorks</span><span class="cat">CAD. Solid</span></div>
+      <div class="tool-cell"><span class="name">Inventor</span><span class="cat">CAD. Mech</span></div>
+      <div class="tool-cell"><span class="name">Fusion 360</span><span class="cat">CAD. Cloud</span></div>
+      <div class="tool-cell"><span class="name">SpaceClaim</span><span class="cat">CAD. ANSYS</span></div>
+      <div class="tool-cell"><span class="name">Discovery</span><span class="cat">Live FEA / CFD</span></div>
+      <div class="tool-cell"><span class="name">ANSYS Mech</span><span class="cat">FEA</span></div>
+      <div class="tool-cell"><span class="name">ANSYS Fluent</span><span class="cat">CFD</span></div>
+      <div class="tool-cell"><span class="name">MATLAB</span><span class="cat">Numerical</span></div>
+      <div class="tool-cell"><span class="name">Simulink</span><span class="cat">System Sim</span></div>
+      <div class="tool-cell"><span class="name">Qblade</span><span class="cat">Aero. Wind</span></div>
+      <div class="tool-cell"><span class="name">Bambu Studio</span><span class="cat">Additive Mfg</span></div>
+      <div class="tool-cell"><span class="name">Witness</span><span class="cat">Process Sim</span></div>
+      <div class="tool-cell"><span class="name">Boothroyd Dewhurst</span><span class="cat">DFMA</span></div>
+      <div class="tool-cell"><span class="name">MS Excel</span><span class="cat">Advanced</span></div>
+      <div class="tool-cell"><span class="name">MS Project</span><span class="cat">Plan</span></div>
+      <div class="tool-cell"><span class="name">Word</span><span class="cat">Docs</span></div>
+      <div class="tool-cell"><span class="name">PowerPoint</span><span class="cat">Reporting</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AWARDS ============ -->
+<section id="awards">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">07 / Recognition</p>
+      <h2 style="margin-top: 24px;">Awards<br/>&amp; certifications.</h2>
+    </div>
+    <div class="awards-grid">
+      <div class="award reveal">
+        <div class="award-year">2026</div>
+        <h4>Best Poster Award</h4>
+        <div class="award-org">ARU Engineering End of Year Show</div>
+      </div>
+      <div class="award reveal delay-1">
+        <div class="award-year">2025</div>
+        <h4>IMechE Railway Challenge. Team Heron</h4>
+        <div class="award-org">Selected to represent ARU at national level</div>
+      </div>
+      <div class="award reveal delay-2">
+        <div class="award-year">2024</div>
+        <h4>Research &amp; Professional Ethics</h4>
+        <div class="award-org">ARU Certification</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <p class="eyebrow" style="color: var(--bronze-soft);">08 / Get in Touch</p>
+    <h2 style="margin-top: 24px;">Open to UK<br/>graduate roles.</h2>
+    <p class="lead" style="color: var(--paper); opacity: .8;">
+      Available for 2026 UK graduate scheme intakes and direct applicant
+      graduate engineering roles. Willing to relocate anywhere in the UK.
+    </p>
+
+    <div class="footer-grid" style="margin-top: 60px;">
+      <div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="mailto:lakshyapant123456@gmail.com" class="btn ghost" style="border-color: var(--paper); color: var(--paper);">
+            Start a conversation <span class="arr"></span>
+          </a>
+          <a href="assets/Lakshya_Pant_CV.pdf" download="Lakshya_Pant_CV.pdf" class="btn primary" style="background: var(--bronze); border-color: var(--bronze); color: var(--paper);">
+            Download CV (PDF) <span class="arr"></span>
+          </a>
+        </div>
+        <div class="big-name">LAKSHYA<br/>PANT.</div>
+      </div>
+      <ul class="footer-links">
+        <h5>Contact</h5>
+        <li><a href="mailto:lakshyapant123456@gmail.com">Email ↗</a></li>
+        <li><a href="tel:+447424416415">Phone ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/lakshya-pant" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      </ul>
+      <ul class="footer-links">
+        <h5>Index</h5>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#featured">Projects</a></li>
+        <li><a href="#industry">Industry</a></li>
+        <li><a href="#extra">Activities</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bot">
+      <span>© 2026 Lakshya Pant. BEng Mechanical Engineering</span>
+      <span>Built from CAD, code &amp; coffee</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+  // ============ Project / Activity Data ============
+  const projects = {
+    drive: {
+      eyebrow: "Featured. Drivetrain Design",
+      title: "Drive System for Railway Vehicles",
+      meta: { Role: "Mechanical Design. Drive System", Team: "ARU Team Heron. IMechE Railway Challenge", Period: "Sep 2025 to Present", Tools: "AutoCAD. Hand calculations" },
+      pills: ["AutoCAD", "Drivetrain", "Gears", "Chains", "Lubrication", "Team Heron"],
+      hero: "drive_selected_a.jpg",
+      paragraphs: [
+        "Core design member of Anglia Ruskin University's Team Heron, designing and optimising the drive system for our IMechE Railway Challenge prototype train. My responsibility is to take the train's required output performance and work backwards to a manufacturable, reliable drivetrain.",
+        "I scoped four candidate concepts and ran each through theoretical calculations for gear ratios, torque and system speed: a chain drive, a two stage speed reduction gearbox, a three stage speed reduction gearbox, and a hybrid configuration. Each was modelled in AutoCAD with engineering drawings and tolerance information for the workshop team.",
+        "After comparison against the competition's performance, weight and reliability criteria, the team selected the configuration shown below for our prototype build. I supported the lubrication strategy decision by comparing shallow bath (Type B) and disc/slinger (Type B) approaches per Mott et al., and contributed the technical documentation and design review packs that underpin the build."
+      ],
+      sections: [
+        { h: "Prototype Vehicle", imgs: ["drive_prototype.jpg"] },
+        { h: "Concept 1. Chain Drive", imgs: ["drive_chain_1.jpg","drive_chain_2.jpg","drive_chain_3.jpg"] },
+        { h: "Concept 2. Two Stage Speed Reduction Gearbox", imgs: ["drive_2stage_a.jpg","drive_2stage_b.jpg","drive_2stage_c.jpg","drive_2stage_d.jpg","drive_2stage_e.jpg"] },
+        { h: "Concept 3. Three Stage Speed Reduction Gearbox", imgs: ["drive_3stage.jpg","drive_3stage_b.jpg","drive_3stage_c.jpg","drive_3stage_d.jpg","drive_3stage_e.jpg"] },
+        { h: "Selected Design. Prototype Build", imgs: ["drive_selected_a.jpg","drive_selected_b.jpg"] },
+        { h: "Lubrication Strategy", imgs: ["drive_lubrication.jpg"] }
+      ]
+    },
+    hvac: {
+      eyebrow: "Featured. CFD &amp; Thermal",
+      title: "Automotive HVAC Air Duct System",
+      meta: { Role: "Solo academic project", Period: "Aug 2025 to Dec 2025", Tools: "ANSYS Fluent. Discovery. Simulink", Module: "CFD. Thermo Fluid Systems" },
+      pills: ["ANSYS Fluent", "Discovery", "CFD", "Simulink", "Thermal"],
+      hero: "hvac_assembly_b.jpg",
+      paragraphs: [
+        "Designed an automotive HVAC air duct system in CAD with a focus on airflow distribution, pressure loss reduction and thermal performance. The brief was to deliver balanced, uniform flow across multiple cabin outlets while staying under target pressure drop and temperature constraints.",
+        "Built the duct geometry in CAD, then took it through ANSYS Discovery for live exploration and ANSYS Fluent for full CFD analysis. Iterated the geometry to improve airflow smoothness, split balance and outlet velocity uniformity. Compared baseline and revised configurations side by side at the same boundary conditions.",
+        "Closed the loop with a Simulink system level model to verify that the duct's behaviour met the wider HVAC target spec under realistic operating profiles. The result was a duct geometry that hit pressure drop and thermal targets with materially better outlet uniformity than the starting design."
+      ],
+      sections: [
+        { h: "Assembly", imgs: ["hvac_assembly_b.jpg","hvac_assembly_a.jpg"] },
+        { h: "CAD Procedure", imgs: ["hvac_cad.jpg"] },
+        { h: "ANSYS Discovery. Live Exploration", imgs: ["hvac_discover_a.jpg","hvac_discover_b.jpg"] },
+        { h: "Geometry Iterations", imgs: ["hvac_iter_a.jpg","hvac_iter_b.jpg"] },
+        { h: "CFD Analysis (ANSYS Fluent)", imgs: ["hvac_cfd_a.jpg","hvac_cfd_b.jpg"] },
+        { h: "Outlet Velocity Uniformity", imgs: ["hvac_velocity.jpg"] },
+        { h: "Simulink Verification", imgs: ["hvac_simulink.jpg"] }
+      ]
+    },
+    feadrone: {
+      eyebrow: "Featured. FEA &amp; Optimisation",
+      title: "FEA Simulation for Drone Design",
+      meta: { Role: "Solo academic project", Period: "Jan 2026 to Present", Tools: "ANSYS Mechanical. SpaceClaim. Discovery. Witness. Bambu Studio", Module: "Final Year Dissertation Strand" },
+      pills: ["ANSYS", "SpaceClaim", "Discovery", "FEA", "Additive Manufacturing"],
+      hero: "feadrone_assembled.jpg",
+      paragraphs: [
+        "Optimised a drone's design through FEA simulation to make it both lightweight and structurally sound. Goal: maximise the strength to weight ratio without compromising performance or durability.",
+        "Using ANSYS Mechanical, SpaceClaim and Discovery I ran stress and strain analyses across two competing design directions, identified the high stress regions and iteratively reduced material away from the body wherever the FEA showed it was safe to do so. Designed an innovative twist and turn locking mechanism for the chassis that simplifies field assembly, and ran process simulations in Witness software to plan the build flow.",
+        "Also explored additive manufacturing simulations using Bambu Studio to ensure the optimised geometry is production ready. Checked for printability, support requirements and orientation. The work continues, with refinement focused on structural integrity and fatigue resistance."
+      ],
+      sections: [
+        { h: "Forces &amp; Loading", imgs: ["feadrone_forces.jpg"] },
+        { h: "Twist and Turn Locking Mechanism", imgs: ["feadrone_lock.jpg"] },
+        { h: "Design 1", imgs: ["feadrone_design1.jpg"] },
+        { h: "Design 2", imgs: ["feadrone_design2.jpg"] },
+        { h: "FEA Results", imgs: ["feadrone_fea_a.jpg","feadrone_fea_b.jpg"] },
+        { h: "Optimised Design", imgs: ["feadrone_optimised.jpg"] },
+        { h: "Process Simulation (Witness)", imgs: ["feadrone_witness.jpg"] },
+        { h: "Assembled Optimised Drone", imgs: ["feadrone_assembled.jpg"] },
+        { h: "Additive Manufacturing (Bambu Studio)", imgs: ["feadrone_bamboo.jpg"] }
+      ]
+    },
+    windturbine: {
+      eyebrow: "Project. Structural &amp; Fatigue",
+      title: "Wind Turbine Blade Analysis",
+      meta: { Role: "Academic project", Period: "Jan 2026 to May 2026", Tools: "Qblade. ANSYS. Excel", Module: "Structural &amp; Aerodynamics" },
+      pills: ["Qblade", "ANSYS", "Goodman Theory", "Miner's Rule", "Weibull"],
+      hero: "wind_results.jpg",
+      paragraphs: [
+        "Conducted structural analysis on the NREL 5MW reference wind turbine blade. Qblade for aerodynamic performance evaluation, ANSYS for finite element analysis under realistic loading.",
+        "Wind variation was modelled using a Weibull distribution to represent the site's wind speed statistics. Applied Goodman's fatigue theory and Miner's rule to estimate fatigue life and identify the regions of the blade most sensitive to fatigue damage.",
+        "The output was a set of design recommendations to improve fatigue resistance and overall performance, based on stress distribution, load cycling assumptions and the predicted life under the modelled wind regime."
+      ],
+      sections: [
+        { h: "Loads on Wind Blades", imgs: ["wind_loads.jpg"] },
+        { h: "Wind Field Construction", imgs: ["wind_windfield.jpg"] },
+        { h: "Simulation", imgs: ["wind_simulating.jpg"] },
+        { h: "Results", imgs: ["wind_results.jpg"] },
+        { h: "Power vs TSR", imgs: ["wind_powervstsr.jpg"] }
+      ]
+    },
+    dfmadrone: {
+      eyebrow: "Project. DFMA &amp; Structural",
+      title: "Drone DFMA &amp; Structural Analysis",
+      meta: { Role: "Solo academic project", Period: "Jan 2025 to May 2025", Tools: "Boothroyd Dewhurst. ANSYS. Inventor", Module: "Manufacturing Engineering" },
+      pills: ["DFMA", "Boothroyd Dewhurst", "ANSYS", "Cost Reduction"],
+      hero: "dfma_drone_overview.jpg",
+      paragraphs: [
+        "Designed and optimised a multi component drone with a strong focus on manufacturability, cost reduction and structural performance. Applied Design for Manufacture and Assembly (DFMA) principles using Boothroyd Dewhurst software to evaluate assembly efficiency.",
+        "DFMA analysis informed targeted design changes that reduced overall part count by approximately 20% while maintaining structural integrity. Supported structural and aerodynamic performance assessment with ANSYS FEA to ensure the optimised design met functional, reliability and performance requirements.",
+        "Outputs include the final CAD model, FEA stress contours used to drive geometry decisions, and a DFMA summary showing total assembly labour time and design efficiency index. Directly traceable to the design changes that drove the savings."
+      ],
+      sections: [
+        { h: "DFMA Drone Overview", imgs: ["dfma_drone_overview.jpg"] },
+        { h: "FEA Stress Distribution", imgs: ["dfma_drone_stress.jpg"] },
+        { h: "Final CAD Model", imgs: ["dfma_drone_cad.jpg"] },
+        { h: "Drone Leg Attachment", imgs: ["dfma_drone_leg.jpg"] },
+        { h: "DFMA Summary &amp; Index", imgs: ["dfma_drone_summary.jpg"] }
+      ]
+    },
+    joystick: {
+      eyebrow: "Project. CAD &amp; Manufacturing",
+      title: "Joystick Component Design &amp; Manufacturing",
+      meta: { Role: "Solo academic project", Period: "Jan 2024 to May 2024", Tools: "CAD. Milling. Lathe. Drill press", Module: "Manufacturing &amp; Materials" },
+      pills: ["CAD", "Milling", "Lathe", "Drill Press", "Tolerancing"],
+      hero: "joystick_assembled_a.jpg",
+      paragraphs: [
+        "Designed and manufactured a mechanical joystick mechanism with controlled ±45° motion for precise directional input. The assignment took the design from concept through detailed CAD into the workshop for actual manufacture.",
+        "Produced detailed engineering drawings with appropriate tolerances and fits, then machined the components personally (milling, turning, drilling) and assembled the parts into a working prototype. Tolerance, motion limiting and fit challenges had to be solved across the assembly to deliver smooth pivot motion within the design constraints.",
+        "The final controller integrates the joystick mechanism, an enclosure and the internal electronics into a complete unit. The project taught me how design decisions translate (or fail to translate) into manufacturing outcomes, and how to design with what the workshop can actually produce."
+      ],
+      sections: [
+        { h: "Top View. Manufactured Controller", imgs: ["joystick_top.jpg"] },
+        { h: "Assembled Controller Prototype", imgs: ["joystick_assembled_a.jpg","joystick_assembled_b.jpg"] },
+        { h: "Drill Press Operations", imgs: ["joystick_drill.jpg"] },
+        { h: "Manual Machining &amp; Finishing", imgs: ["joystick_machining.jpg"] }
+      ]
+    },
+    leafspring: {
+      eyebrow: "Project. Suspension &amp; FEA",
+      title: "Leaf Spring Design &amp; Finite Element Analysis",
+      meta: { Role: "Academic project", Period: "2024 to 2025", Tools: "Autodesk Inventor. ANSYS Mechanical", Module: "Mechanical Design &amp; FEA" },
+      pills: ["Inventor", "ANSYS", "Static FEA", "Suspension"],
+      hero: "leaf_vonmises.jpg",
+      paragraphs: [
+        "Designed and analysed a semi elliptical leaf spring for vehicle suspension applications. Created the 3D CAD model in Autodesk Inventor representing the stacked leaf configuration, then translated the geometry into a 2D engineering drawing for manufacturing feasibility.",
+        "Carried out static FEA in ANSYS Mechanical under a central applied load to study deflection and stress distribution. Maximum deflection occurred at the centre of the spring as expected, and von Mises contours were used to identify the high stress regions that would drive any redesign.",
+        "Outputs include the assembly view, dimensional layout, 2D drawing, deflection contour plot and von Mises stress distribution. A full design and analysis loop end to end."
+      ],
+      sections: [
+        { h: "3D CAD Assembly View", imgs: ["leaf_3dassembly.jpg"] },
+        { h: "Geometry &amp; Dimensional Definition", imgs: ["leaf_geometry.jpg"] },
+        { h: "2D Engineering Drawing", imgs: ["leaf_drawing.jpg"] },
+        { h: "Deflection Contour", imgs: ["leaf_deflection.jpg"] },
+        { h: "Von Mises Stress Distribution", imgs: ["leaf_vonmises.jpg"] }
+      ]
+    },
+    strawberry: {
+      eyebrow: "Project. Mechanism Design",
+      title: "Strawberry Cutter Mechanism",
+      meta: { Role: "Academic project", Period: "Sep 2024 to Dec 2024", Tools: "CAD", Module: "Mechanism Design" },
+      pills: ["CAD", "Mechanism", "Linear Motion"],
+      hero: "strawberry_assy.jpg",
+      paragraphs: [
+        "Designed and modelled a mechanical strawberry cutter system with controlled Y axis motion to achieve consistent and accurate cutting. The assembly integrates a linear motion system with a structural frame supporting repeatable, controlled blade engagement.",
+        "Iterated the CAD models to optimise blade travel, cutting accuracy and the geometric relationship between carriage motion and blade engagement. Sized the rails, carriage and frame for stable operation."
+      ],
+      sections: [
+        { h: "Assembly", imgs: ["strawberry_assy.jpg"] },
+        { h: "Detail", imgs: ["strawberry_detail.jpg"] }
+      ]
+    },
+    heat: {
+      eyebrow: "Project. Numerical Methods",
+      title: "2D Heat Conduction",
+      meta: { Role: "Solo academic project", Period: "Jan 2025 to May 2025", Tools: "MATLAB", Module: "Computational Methods" },
+      pills: ["MATLAB", "Finite Difference", "Steady State", "Heat Transfer"],
+      hero: "heat_result.jpg",
+      paragraphs: [
+        "Simulated steady state 2D heat conduction through a carbon steel rectangular plate using the Finite Difference Method in MATLAB. Discretised the heat equation across a structured mesh and iterated to convergence under prescribed boundary conditions.",
+        "Analysed the impact of mesh size and boundary condition choice on simulation accuracy and convergence behaviour. Compared fine versus coarse discretisations and observed where the trade off between accuracy and computational cost sits for this problem."
+      ],
+      sections: [
+        { h: "Discretisation Grid", imgs: ["heat_grid.jpg"] },
+        { h: "Finite Difference Implementation", imgs: ["heat_fdm.jpg"] },
+        { h: "Result", imgs: ["heat_result.jpg"] }
+      ]
+    }
+  };
+
+  const extras = {
+    poster: {
+      eyebrow: "Award. 2026",
+      title: "Best Poster Award. ARU End of Year Show",
+      meta: { Event: "Engineering End of Year Show", Institution: "Anglia Ruskin University", Date: "2026" },
+      pills: ["Poster Presentation", "Industry Showcase", "Dissertation"],
+      hero: "poster_award_a.jpg",
+      paragraphs: [
+        "Won the poster presentation award at Anglia Ruskin University's Engineering End of Year Show. The show celebrates dissertation projects and presents student work to industrial sectors for engagement and collaboration.",
+        "The poster covered my final year structural and FEA work. Presented to a panel of academics and visiting industry representatives across automotive, aerospace, defence and manufacturing sectors."
+      ],
+      sections: [{ h: "Award &amp; Presentation", imgs: ["poster_award_a.jpg","poster_award_b.jpg","poster_award_c.jpg"] }]
+    },
+    hack1: {
+      eyebrow: "Activity. 2024",
+      title: "STEM Hackathon. Season 1",
+      meta: { Role: "Treasurer / Organiser", Society: "ARU STEM Society", Date: "2024" },
+      pills: ["Treasurer", "Event Management", "Sponsorship"],
+      hero: "hack1_a.jpg",
+      paragraphs: [
+        "Co organised the inaugural ARU STEM Society hackathon as Treasurer. Managed the event budget end to end (sponsor coordination, expense tracking, financial reporting) alongside on the day logistics, schedules and team coordination.",
+        "The first season set the financial baseline and operational template that Season 2 then scaled across multiple campuses."
+      ],
+      sections: [{ h: "Hackathon Season 1", imgs: ["hack1_a.jpg","hack1_b.jpg","hack1_c.jpg"] }]
+    },
+    hack2: {
+      eyebrow: "Activity. 2025",
+      title: "STEM Hackathon. Season 2",
+      meta: { Role: "Treasurer / Organiser", Society: "ARU STEM Society", Scope: "Cambridge, Chelmsford, Peterborough" },
+      pills: ["Multi campus", "Sponsor Management", "Treasury"],
+      hero: "hack2_a.jpg",
+      paragraphs: [
+        "Scaled the ARU STEM Society hackathon across three campuses (Cambridge, Chelmsford, Peterborough). Broader sponsor base, larger participant pool, tighter financial reporting. Continued in the Treasurer role with full oversight of the event's finances.",
+        "The cross campus collaboration was the most logistically complex event I helped organise during my degree, and the most rewarding."
+      ],
+      sections: [{ h: "Hackathon Season 2", imgs: ["hack2_a.jpg","hack2_b.jpg","hack2_c.jpg"] }]
+    },
+    debate: {
+      eyebrow: "Organiser. 2025",
+      title: "IMechE Debate Competition",
+      meta: { Role: "Organiser", Society: "ARU STEM Society", Event: "IMechE Debate Competition", Date: "2025" },
+      pills: ["Event Management", "Logistics", "Panel Coordination"],
+      hero: "imeche_debate_a.jpg",
+      paragraphs: [
+        "Organised the IMechE debate competition for the ARU STEM Society. Coordinated logistics, judging panel, motion selection and on the day delivery for the student teams competing on engineering policy, professional ethics and industry direction.",
+        "Brought in practising engineers to judge, recruited and briefed the student teams, ran the schedule on the day and handled the post event reporting. Sat on the organising side rather than competing.",
+        "A useful complement to the hackathons. Smaller event, different format, same end to end ownership of the operational side."
+      ],
+      sections: [{ h: "IMechE Debate Competition", imgs: ["imeche_debate_a.jpg","imeche_debate_b.jpg","imeche_debate_c.jpg"] }]
+    },
+    festival: {
+      eyebrow: "Volunteer. Oct 2024",
+      title: "Chelmsford Science &amp; Engineering Festival",
+      meta: { Role: "Volunteer", Date: "October 2024", Organisation: "Chelmsford Science &amp; Engineering Society" },
+      pills: ["Public Engagement", "Workshop Delivery", "Communication"],
+      hero: "festival_a.jpg",
+      paragraphs: [
+        "Volunteered at the Chelmsford Science &amp; Engineering Festival, communicating engineering concepts to a non technical public audience. Workshop delivery, exhibit setup and visitor engagement throughout the day.",
+        "Communicating technical ideas to families, school groups and curious adults pushed me to explain my work in plain English. A habit that helps in industry as much as in public engagement."
+      ],
+      sections: [{ h: "Festival Day", imgs: ["festival_a.jpg","festival_b.jpg","festival_c.jpg","festival_d.jpg","festival_e.jpg"] }]
+    },
+    ford: {
+      eyebrow: "Site Visit. 2025",
+      title: "Ford. Dunton",
+      meta: { Type: "Industry visit", Location: "Dunton Technical Centre, UK" },
+      pills: ["Automotive", "R&amp;D", "Powertrain"],
+      hero: "industry_ford.jpg",
+      paragraphs: [
+        "Industry visit to Ford's Dunton Technical Centre. Ford's UK engineering and R&amp;D hub. Exposure to automotive product development, powertrain engineering and the practical demands of vehicle programmes.",
+        "A useful reference point for what graduate engineers do day to day in a global automotive OEM."
+      ],
+      sections: [{ h: "Ford Dunton", imgs: ["industry_ford.jpg"] }]
+    },
+    bae: {
+      eyebrow: "Site Visit. 2025",
+      title: "BAE Systems",
+      meta: { Type: "Industry visit", Sector: "Defence" },
+      pills: ["Defence", "Systems Engineering", "Manufacturing"],
+      hero: "industry_bae.jpg",
+      paragraphs: [
+        "Industry exposure to BAE Systems. Large programme defence engineering, advanced manufacturing and systems integration. Discussion of graduate scheme pathways and the breadth of engineering disciplines BAE recruits across.",
+        "Particularly interested in the systems engineering side: how requirements flow down from a multi decade programme to individual mechanical components."
+      ],
+      sections: [{ h: "BAE Systems Visit", imgs: ["industry_bae.jpg"] }]
+    },
+    cnh: {
+      eyebrow: "Site Visit. 2025",
+      title: "CNH Industrial",
+      meta: { Type: "Industry visit", Sector: "Agricultural &amp; Construction Equipment" },
+      pills: ["Drivetrain", "Hydraulics", "Manufacturing"],
+      hero: "industry_cnh_a.jpg",
+      paragraphs: [
+        "Plant visit to CNH Industrial. Agricultural and construction equipment manufacturing in practice. Exposure to drivetrain systems, hydraulics and assembly line engineering at scale.",
+        "Direct line to my IMechE Railway Challenge work on drivetrains. Same fundamental design questions, different vehicle and load case."
+      ],
+      sections: [{ h: "CNH Plant Visit", imgs: ["industry_cnh_a.jpg","industry_cnh_b.jpg"] }]
+    },
+    anb: {
+      eyebrow: "Industry Talk. 2025",
+      title: "ANB Sensors",
+      meta: { Type: "Industry talk", Sector: "Sensor Technology" },
+      pills: ["Sensors", "Calibration", "Water Quality"],
+      hero: null,
+      paragraphs: [
+        "Industry session with ANB Sensors. Engineering applications in measurement, calibration and water quality monitoring. Useful exposure to a smaller, deep tech engineering company outside the large OEM track.",
+        "(No photography permitted on site visit.)"
+      ],
+      sections: []
+    },
+    ipeco: {
+      eyebrow: "Industry Talk. 2025",
+      title: "Ipeco Limited",
+      meta: { Type: "Industry talk", Sector: "Aerospace Seating &amp; Electronics" },
+      pills: ["Aerospace", "Manufacturing", "Certification"],
+      hero: null,
+      paragraphs: [
+        "Industry session with Ipeco. Aerospace seating and electronic systems manufacturer. Discussion of manufacturing standards, regulatory certification and the product development cycle for civil and military aviation.",
+        "(No photography permitted on site visit.)"
+      ],
+      sections: []
+    }
+  };
+
+  // ============ Modal rendering ============
+  const modalBg = document.getElementById('modal-bg');
+  const modal = document.getElementById('modal');
+  function openModal(d) {
+    if (!d) return;
+    let html = '';
+    html += `<button class="modal-close" aria-label="Close">×</button>`;
+    if (d.hero) {
+      html += `<div class="modal-hero"><img src="assets/${d.hero}" alt=""/></div>`;
+    } else {
+      html += `<div class="modal-hero" style="background:linear-gradient(135deg,#0d1b2a,#1c2c40); display:flex; align-items:center; justify-content:center; color: var(--bronze-soft); font-family: var(--display); font-size: clamp(40px,5vw,72px); text-transform: uppercase; letter-spacing: 0.04em;">${d.title.split(' ').slice(0,2).join(' ')}</div>`;
+    }
+    html += `<div class="modal-body">`;
+    html += `<p class="modal-eyebrow">${d.eyebrow}</p>`;
+    html += `<h2>${d.title}</h2>`;
+    html += `<div class="modal-meta">`;
+    for (const [k,v] of Object.entries(d.meta || {})) {
+      html += `<div>${k}<span>${v}</span></div>`;
+    }
+    html += `</div>`;
+    if (d.pills && d.pills.length) {
+      html += `<div class="modal-pills">${d.pills.map(p=>`<span class="pill">${p}</span>`).join('')}</div>`;
+    }
+    (d.paragraphs||[]).forEach(p => { html += `<p>${p}</p>`; });
+    (d.sections||[]).forEach(s => {
+      if (!s.imgs || !s.imgs.length) return;
+      html += `<h3>${s.h}</h3>`;
+      const fullClass = s.imgs.length === 1 ? ' full' : '';
+      html += `<div class="modal-gallery">${s.imgs.map(i=>`<div class="gimg${fullClass}"><img src="assets/${i}" alt="${s.h}" loading="lazy"/></div>`).join('')}</div>`;
+    });
+    html += `</div>`;
+    modal.innerHTML = html;
+    modalBg.classList.add('open');
+    modalBg.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    modal.scrollTop = 0;
+    modal.querySelector('.modal-close').addEventListener('click', closeModal);
+  }
+  function closeModal() {
+    modalBg.classList.remove('open');
+    modalBg.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  modalBg.addEventListener('click', (e) => { if (e.target === modalBg) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  document.querySelectorAll('[data-project]').forEach(el => {
+    el.addEventListener('click', () => openModal(projects[el.dataset.project]));
+  });
+  document.querySelectorAll('[data-extra]').forEach(el => {
+    el.addEventListener('click', () => openModal(extras[el.dataset.extra]));
+  });
+
+  // ============ Reveal on scroll ============
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ============ Stat count up ============
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = +el.dataset.count;
+        const small = el.querySelector('.small')?.outerHTML || '';
+        let n = 0;
+        const step = Math.max(1, Math.floor(target / 22));
+        const t = setInterval(() => {
+          n = Math.min(target, n + step);
+          el.innerHTML = n + small;
+          if (n === target) clearInterval(t);
+        }, 35);
+        cio.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.num[data-count]').forEach(el => cio.observe(el));
+
+  // ============ Toggle all projects ============
+  const grid = document.getElementById('projects-grid');
+  const toggleBtn = document.getElementById('toggle-all');
+  toggleBtn.addEventListener('click', () => {
+    grid.classList.toggle('visible');
+    toggleBtn.firstChild.textContent = grid.classList.contains('visible') ? 'Hide All Projects ' : 'View All Projects ';
+    if (grid.classList.contains('visible')) {
+      setTimeout(() => grid.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
+    }
+  });
+
+  // ============ Portrait 3D tilt ============
+  const tiltWrap = document.getElementById('portrait-rotate');
+  if (tiltWrap) {
+    tiltWrap.addEventListener('mousemove', (e) => {
+      const r = tiltWrap.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      tiltWrap.style.setProperty('--rx', (x * 12) + 'deg');
+      tiltWrap.style.setProperty('--ry', (-y * 12) + 'deg');
+    });
+    tiltWrap.addEventListener('mouseleave', () => {
+      tiltWrap.style.setProperty('--rx', '0deg');
+      tiltWrap.style.setProperty('--ry', '0deg');
+    });
+  }
+
+  // ============ Cursor follower ============
+  const cursor = document.getElementById('cursor');
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+  function loop() {
+    cx += (mx - cx) * 0.18; cy += (my - cy) * 0.18;
+    cursor.style.left = cx + 'px';
+    cursor.style.top = cy + 'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+  document.querySelectorAll('a, button, .featured, .project-card, .industry-card, .extra-card, .award, .pill, .tool-cell').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+  });
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
