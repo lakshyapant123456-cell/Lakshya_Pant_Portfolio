@@ -1075,24 +1075,25 @@
       <article class="featured reveal" data-project="drive">
         <div class="featured-img">
           <span class="featured-tag">Featured. 01</span>
-          <img src="assets/drive_selected_a.jpg" alt="Selected drive system design" loading="lazy"/>
+          <img src="assets/drive_train_hero.jpg" alt="Assembled CAD prototype train" loading="lazy"/>
         </div>
         <div class="featured-text">
           <span class="featured-num">01. Drivetrain Design</span>
           <h3>Drive System for Railway Vehicles<br/><span style="font-size: 0.55em; color: var(--accent); font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none;">IMechE &amp; European Railway Challenge</span></h3>
           <div class="pills">
-            <span class="pill">Autodesk Inventor</span>
+            <span class="pill">ARU Team Heron</span>
             <span class="pill">Drivetrain</span>
-            <span class="pill">IMechE Railway Challenge</span>
-            <span class="pill">Team Heron</span>
+            <span class="pill">Gears</span>
+            <span class="pill">Chains</span>
+            <span class="pill">Mechanical Design Lead</span>
           </div>
           <p>
-            Designed and evaluated four mechanical drive system concepts for our
-            IMechE Railway Challenge prototype train: chain drive, two-stage and
-            three-stage speed reduction gearboxes. Performed torque, ratio and
-            speed calculations for each. The final selected design feeds power
-            transmission, durability and energy efficiency targets into a
-            manufacturable assembly with a documented lubrication strategy.
+            Mechanical Design Lead for ARU Team Heron's European Railway
+            Challenge prototype train, leading a 6-student mechanical team.
+            Responsible for the drivetrain, brake system, coupling system and
+            final CAD assembly. Developed the selected chain-drive solution
+            through torque, ratio and speed calculations, integrating the
+            motor, sprockets, shafts, bearings, brakes and coupling interfaces.
           </p>
           <span class="featured-cta">Open project <span class="arr">↗</span></span>
         </div>
@@ -1595,21 +1596,20 @@
     drive: {
       eyebrow: "Featured. Drivetrain Design",
       title: "Drive System for Railway Vehicles (IMechE & European Railway Challenge)",
-      meta: { Role: "Mechanical Design Engineer. Drivetrain", Team: "ARU Team Heron. IMechE Railway Challenge", Period: "Sep 2025 to Present", Tools: "Autodesk Inventor. Hand calculations" },
-      pills: ["Autodesk Inventor", "Drivetrain", "Gears", "Chains", "Lubrication", "Team Heron"],
-      hero: "drive_selected_a.jpg",
+      meta: { Role: "Mechanical Design Lead", Team: "ARU Team Heron (6-student mechanical team)", Period: "Sep 2025 to Present", Tools: "Autodesk Inventor. Hand calculations" },
+      pills: ["ARU Team Heron", "Drivetrain", "Gears", "Chains", "Mechanical Design Lead"],
+      hero: "drive_train_hero.jpg",
       paragraphs: [
-        "Core design member of Anglia Ruskin University's Team Heron, designing and optimising the drive system for our IMechE & European Railway Challenge prototype train. My responsibility is to take the train's required output performance and work backwards to a manufacturable, reliable drivetrain.",
-        "I scoped four candidate concepts and ran each through theoretical calculations for gear ratios, torque and system speed: a chain drive, a two stage speed reduction gearbox, a three stage speed reduction gearbox, and a two-stage hybrid configuration. Each was modelled in Autodesk Inventor with engineering drawings and tolerance information for the workshop team.",
-        "After comparison against the competition's performance, weight and reliability criteria, the team selected the two-stage hybrid configuration for our prototype build. I supported the lubrication strategy decision by comparing shallow bath (Type B) and disc/slinger (Type B) approaches per Mott et al., and contributed the technical documentation and design review packs that underpin the build."
+        "Mechanical Design Lead for ARU Team Heron's European Railway Challenge prototype train, leading a 6-student mechanical team. Responsible for the drivetrain, brake system, coupling system and final CAD assembly.",
+        "Developed the selected chain-drive solution through torque, ratio and speed calculations, integrating the motor, sprockets, shafts, bearings, brakes and coupling interfaces. Scoped four candidate concepts in Autodesk Inventor (chain drive, two-stage and three-stage gearboxes, and a two-stage hybrid) before the team selected the chain-drive solution for the prototype build.",
+        "Owned the full CAD assembly end-to-end: drivetrain layout, bogie integration, braking mechanism, suspension and wheelset, and the final body-shell assembly. Supported the lubrication strategy decision (shallow bath / disc-slinger approaches per Mott et al.) and produced the engineering drawings and design review packs that underpin the build."
       ],
       sections: [
+        { h: "Assembled CAD Prototype Train", imgs: ["drive_train_hero.jpg"] },
         { h: "Design Iterations. Designs 1 & 2 (Chain Drive, Two-Stage Gearbox)", imgs: ["drive_iter_1.jpg"] },
         { h: "Design Iterations. Designs 3 & 4 (Three-Stage Gearbox, Selected Hybrid)", imgs: ["drive_iter_2.jpg"] },
-        { h: "CAD Assembly Views — Inventor 2026", imgs: ["drive_cad_views.jpg"] },
-        { h: "Prototype Vehicle", imgs: ["drive_prototype.jpg"] },
-        { h: "Selected Design. Prototype Build", imgs: ["drive_selected_a.jpg","drive_selected_b.jpg"] },
-        { h: "Lubrication Strategy", imgs: ["drive_lubrication.jpg"] }
+        { h: "CAD Assembly Views — Drivetrain, Braking, Bogie", imgs: ["drive_cad_views.jpg"] },
+        { h: "Final CAD Assembly Views — Drive System Integration", imgs: ["drive_final_cad_views.jpg"] }
       ]
     },
     hvac: {
@@ -1642,9 +1642,10 @@
         "Ran process simulations in Witness (Discrete Event Simulation) to plan the build flow, then took the optimised geometry into Bambu Studio for FDM slicing, toolpath generation and print result preview. Validated the chassis under elastic strain, mesh study and total deformation FEA checks before finalising for additive manufacturing."
       ],
       sections: [
-        { h: "FEA Iterations + Witness DES", imgs: ["feadrone_selected_fea2.jpg"] },
+        { h: "FEA Iterations + Witness DES", imgs: ["feadrone_witness.jpg"] },
         { h: "Innovative Locking Mechanism", imgs: ["feadrone_locking.jpg"] },
         { h: "Mechanism 1 & 2 — Lid & Twist-and-Lock Design", imgs: ["feadrone_mech_design.jpg"] },
+        { h: "Selected Mechanism FEA + Bambu Studio", imgs: ["feadrone_selected_fea.jpg"] },
         { h: "Final Assembled Drone", imgs: ["feadrone_assembled.jpg"] }
       ]
     },
