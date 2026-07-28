@@ -225,6 +225,33 @@ body::after{
 .scard-imgs img:first-child{grid-column:1/-1;aspect-ratio:16/9}
 @media(max-width:900px){.scard{grid-template-columns:1fr}.scard-imgs{order:-1}}
 
+/* ============ EXPERIENCE (timeline) ============ */
+.exp-list{--exp-gap:clamp(20px,3.2vw,44px);position:relative;border-left:1px solid var(--line);padding-left:var(--exp-gap);margin-left:4px}
+.exp-item{position:relative;padding:clamp(26px,3.2vw,42px) 0;border-top:1px solid var(--line)}
+.exp-item:first-child{border-top:0;padding-top:0}
+.exp-item::before{content:'';position:absolute;top:clamp(31px,3.4vw,47px);left:calc((var(--exp-gap) + 5px) * -1);width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px var(--paper)}
+.exp-item:first-child::before{top:7px}
+.exp-head{display:grid;grid-template-columns:172px 1fr;gap:clamp(18px,3vw,50px);align-items:start}
+.exp-date{font-family:var(--font-m);font-size:12px;letter-spacing:.06em;color:var(--orange);padding-top:6px}
+.exp-role{font-size:clamp(21px,2.5vw,32px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.exp-org{font-family:var(--font-s);font-size:clamp(16px,1.7vw,21px);color:var(--ink-2);margin-top:7px}
+.exp-meta{font-family:var(--font-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:11px;display:flex;flex-wrap:wrap;gap:8px 14px}
+.exp-summary{color:var(--ink-soft);font-size:15px;line-height:1.75;max-width:62ch;margin-top:16px}
+.exp-points{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:11px;max-width:66ch}
+.exp-points li{position:relative;padding-left:22px;color:var(--ink-soft);font-size:14.5px;line-height:1.7}
+.exp-points li::before{content:'';position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--orange)}
+.exp-skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding-bottom:4px}
+.exp-skills span{font-family:var(--font-m);font-size:11px;letter-spacing:.05em;border:1px solid var(--line);border-radius:99px;padding:7px 15px;color:var(--ink-soft);transition:background .3s,color .3s,border-color .3s}
+.exp-skills span:hover{background:var(--orange);border-color:var(--orange);color:var(--paper)}
+.exp-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:none;border:0;border-bottom:1px solid var(--line);padding:0 0 4px;font-family:var(--font-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:color .3s,border-color .3s}
+.exp-link:hover{color:var(--orange);border-color:var(--orange)}
+.exp-link:focus-visible{outline:2px solid var(--orange);outline-offset:5px;border-radius:3px}
+@media(max-width:760px){
+  .exp-head{grid-template-columns:1fr;gap:10px}
+  .exp-date{padding-top:0}
+  .exp-list{--exp-gap:18px}
+}
+
 /* ============ SKILLS (dark) ============ */
 .skill-row{display:grid;grid-template-columns:300px 1fr;gap:clamp(20px,4vw,60px);padding:clamp(28px,3.5vw,44px) 0;border-top:1px solid var(--line-light);align-items:start}
 .skill-row:last-child{border-bottom:1px solid var(--line-light)}
@@ -344,6 +371,7 @@ body::after{
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#industry">Industry</a></li>
     <li><a href="#activities">Activities</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -522,10 +550,108 @@ body::after{
   </div>
 </section>
 
+<!-- ===== EXPERIENCE ===== -->
+<section class="section" id="experience" aria-labelledby="exp-heading">
+  <div class="section-tag">04 / Experience</div>
+  <h2 class="h-display" id="exp-heading" style="margin-bottom:clamp(40px,6vw,80px)">Professional <em>experience.</em></h2>
+  <div class="exp-list" id="expList"></div>
+</section>
+
+<script>
+/* ===== EXPERIENCE DATA (edit here to update the section) ===== */
+const EXPERIENCE = [
+  {
+    role: 'Development Engineer',
+    org: 'Harry Levy Amusement Contractor Ltd.',
+    dates: 'May 2026 — Present',
+    meta: ['Full-time', 'Kent, England, UK', 'On-site'],
+    summary: 'Designing mechanical parts and assemblies for new arcade machines in SolidWorks, taking work from concept through manufacturing drawings, prototype testing and into production support.',
+    points: [
+      'Design mechanical parts and assemblies for new arcade machines using SolidWorks.',
+      'Produce clear 2D manufacturing drawings from 3D CAD models.',
+      'Build, test and evaluate prototype machines ahead of production.',
+      'Revise designs based on prototype testing, production feedback and machine performance.',
+      'Support production staff with drawings, design updates and technical issues.',
+      'Work across departments so parts are practical to manufacture and assemble.',
+      'Maintain design documentation, component data and bills of materials.'
+    ],
+    skills: ['SolidWorks','3D CAD Modelling','2D Manufacturing Drawings','Mechanical Design','Prototype Development','DFMA','Bills of Materials','Production Support','Engineering Documentation']
+  },
+  {
+    role: 'Mechanical Design Lead',
+    org: 'European Railway Challenge Team · Anglia Ruskin University',
+    dates: 'Dec 2025 — Jun 2026',
+    meta: ['Chelmsford, England, UK'],
+    summary: 'Promoted to lead mechanical design through the final phase of the project, coordinating design work across a team of six students.',
+    points: [
+      'Coordinated mechanical design tasks across a team of six students.',
+      'Led integration of the drivetrain, braking system, coupling arrangement and final vehicle assembly in Autodesk Inventor.',
+      'Checked mechanical fit, component clearance, alignment and compatibility between subsystems.',
+      'Supported the final technical documentation and competition poster presentation.',
+      'Contributed to Team Heron winning the Technical Poster Challenge at the Alpha Trains European Railway Challenge 2026.'
+    ],
+    skills: ['Autodesk Inventor','Mechanical System Integration','Team Leadership','Drivetrain Design','Braking Systems','Coupling Systems','CAD Assemblies','Technical Documentation']
+  },
+  {
+    role: 'Project Engineer',
+    org: 'IMechE Railway Challenge Team · Anglia Ruskin University',
+    dates: 'Sep 2025 — Present',
+    meta: ['Chelmsford, England, UK'],
+    summary: 'Contributing to the design, development and integration of mechanical systems for a prototype railway vehicle.',
+    points: [
+      'Contribute to mechanical system design and integration on the prototype vehicle.',
+      'Support optimisation work and design decisions across subsystems.',
+      'Produce and maintain technical documentation for the build.',
+      'Coordinate tasks and design handovers across the team.'
+    ],
+    skills: ['Mechanical Engineering','CAD','Engineering Optimisation','Design Integration','Technical Documentation','Problem Solving','Project Coordination','Teamwork']
+  },
+  {
+    role: 'Mechanical Design Engineer — Drivetrain Systems',
+    org: 'European Railway Challenge Team · Anglia Ruskin University',
+    dates: 'Aug 2025 — Dec 2025',
+    meta: ['Chelmsford, England, UK'],
+    summary: 'Developed and compared drivetrain concepts for the prototype railway vehicle, balancing speed reduction, packaging space, efficiency and ease of manufacture.',
+    points: [
+      'Designed drivetrain concepts against speed reduction, packaging space, efficiency, manufacturability and engineering design standards.',
+      'Compared two-stage chain, three-stage chain and hybrid gear-and-chain layouts.',
+      'Completed manual calculations for gear ratios, torque and wheel speed.',
+      'Built Autodesk Inventor layouts to verify packaging, axle alignment, chain positioning and clearance within the bogie assembly.',
+      'Produced technical documentation covering the options, calculations and final design selection.'
+    ],
+    skills: ['Drivetrain Design','Gear Ratio Calculations','Torque Calculations','Autodesk Inventor','Mechanical Packaging','Chain Drive Systems','Concept Evaluation','Technical Reporting'],
+    modal: 'drive'
+  }
+];
+
+(function(){
+  var list = document.getElementById('expList');
+  if(!list) return;
+  var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+
+  list.innerHTML = EXPERIENCE.map(function(job, i){
+    return '<article class="exp-item" data-reveal>' +
+      '<div class="exp-head">' +
+        '<div class="exp-date">' + esc(job.dates) + '</div>' +
+        '<div>' +
+          '<h3 class="exp-role">' + esc(job.role) + '</h3>' +
+          '<div class="exp-org">' + esc(job.org) + '</div>' +
+          '<div class="exp-meta">' + job.meta.map(function(m){ return '<span>' + esc(m) + '</span>'; }).join('') + '</div>' +
+          '<p class="exp-summary">' + esc(job.summary) + '</p>' +
+          '<ul class="exp-points">' + job.points.map(function(pt){ return '<li>' + esc(pt) + '</li>'; }).join('') + '</ul>' +
+          '<div class="exp-skills" aria-label="Skills used">' + job.skills.map(function(s){ return '<span>' + esc(s) + '</span>'; }).join('') + '</div>' +
+          (job.modal ? '<button class="exp-link" type="button" data-modal="' + esc(job.modal) + '">View the project<i aria-hidden="true">&#8599;</i></button>' : '') +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }).join('');
+})();
+</script>
+
 <!-- ===== INDUSTRY ===== -->
 <section class="industry" id="industry">
   <div class="industry-head">
-    <div class="section-tag">04 / Industry Exposure</div>
+    <div class="section-tag">05 / Industry Exposure</div>
     <h2 class="h-display">Industry <em>exposure.</em></h2>
   </div>
   <div class="hwrap" id="hwrap">
@@ -576,7 +702,7 @@ body::after{
 
 <!-- ===== ACTIVITIES ===== -->
 <section class="section" id="activities" style="background:var(--paper-2)">
-  <div class="section-tag">05 / Activities</div>
+  <div class="section-tag">06 / Activities</div>
   <h2 class="h-display" style="margin-bottom:clamp(40px,6vw,80px)">Leadership <em>&amp; impact.</em></h2>
   <div class="stack-wrap">
     <div class="scard" data-modal="poster">
@@ -651,7 +777,7 @@ body::after{
 
 <!-- ===== SKILLS ===== -->
 <section class="section dark" id="skills">
-  <div class="section-tag">06 / Capabilities</div>
+  <div class="section-tag">07 / Capabilities</div>
   <h2 class="h-display" style="margin-bottom:clamp(40px,6vw,80px)">Skills<em>.</em></h2>
   <div class="skill-row" data-reveal>
     <h4><i>A.</i>Technical</h4>
@@ -685,7 +811,7 @@ body::after{
 
 <!-- ===== TOOLS ===== -->
 <section class="section" id="tools">
-  <div class="section-tag">07 / Toolset</div>
+  <div class="section-tag">08 / Toolset</div>
   <h2 class="h-display" style="margin-bottom:clamp(40px,6vw,80px)">Tools I <em>work in.</em></h2>
   <div class="tools-grid">
     <div class="tool"><b>Inventor</b><span>CAD · Mech</span></div>
@@ -711,7 +837,7 @@ body::after{
 
 <!-- ===== AWARDS ===== -->
 <section class="section" id="awards" style="padding-top:0">
-  <div class="section-tag">08 / Recognition</div>
+  <div class="section-tag">09 / Recognition</div>
   <h2 class="h-display" style="margin-bottom:clamp(40px,6vw,80px)">Awards <em>&amp; certs.</em></h2>
   <div class="award-row" data-reveal>
     <div class="award-year">2026</div>
@@ -737,7 +863,7 @@ body::after{
 
 <!-- ===== CONTACT ===== -->
 <section class="section dark contact" id="contact">
-  <div class="section-tag" style="justify-content:center">09 / Get in Touch</div>
+  <div class="section-tag" style="justify-content:center">10 / Get in Touch</div>
   <h2 class="h-display">Let's build<br><em>something real.</em></h2>
   <p class="contact-sub" data-reveal>Available for 2026 UK graduate scheme intakes and direct-applicant graduate engineering roles. Willing to relocate anywhere in the UK.</p>
   <div class="contact-actions" data-reveal>
@@ -753,6 +879,7 @@ body::after{
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
