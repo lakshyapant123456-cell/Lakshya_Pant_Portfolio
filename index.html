@@ -442,12 +442,26 @@ body::after{
   <div class="section-tag">02 / Featured Work</div>
   <div class="featured-head">
     <h2 class="h-display">Featured <em>projects.</em></h2>
-    <p data-reveal>Three projects with the most rigour. Design, simulation and manufacturability worked end to end.</p>
+    <p data-reveal>Four projects with the most rigour. Design, simulation and manufacturability worked end to end.</p>
   </div>
+
+  <article class="project" data-modal="toro">
+    <div class="project-media" data-cursor="view">
+      <span class="project-num">Featured / 01</span>
+      <img src="assets/toro_kart_drivetrain.jpg" alt="Three-stage drivetrain with Comet 40 CVT integrated in the kart CAD assembly">
+    </div>
+    <div class="project-info">
+      <div class="project-cat" data-reveal>Drivetrain Design · CVT Integration</div>
+      <h3 data-reveal>Kart Drivetrain Design &amp; CVT Integration<small>Toro Motorsports · Purdue University, USA</small></h3>
+      <p data-reveal>Contributing remotely to the design and development of a three-stage drivetrain for a racing kart powered by a Yamaha KT100 engine. The system integrates a synchronous belt reduction, Comet 40 Series CVT and chain final drive connected to a 50 mm OTK rear axle, focused on speed reduction, torque delivery, mechanical reliability and efficient packaging.</p>
+      <div class="tags" data-reveal><span class="hot">Drivetrain Design Contributor</span><span>Siemens NX</span><span>SOLIDWORKS</span><span>CVT</span><span>Belt &amp; Chain Drive</span></div>
+      <span class="open-cta" data-reveal>Open project <i>↗</i></span>
+    </div>
+  </article>
 
   <article class="project" data-modal="drive">
     <div class="project-media" data-cursor="view">
-      <span class="project-num">Featured / 01</span>
+      <span class="project-num">Featured / 02</span>
       <img src="assets/drive_train_hero.jpg" alt="Assembled CAD prototype train">
     </div>
     <div class="project-info">
@@ -461,7 +475,7 @@ body::after{
 
   <article class="project" data-modal="hvac">
     <div class="project-media" data-cursor="view">
-      <span class="project-num">Featured / 02</span>
+      <span class="project-num">Featured / 03</span>
       <img src="assets/hvac_assembly_b.jpg" alt="HVAC duct assembly">
     </div>
     <div class="project-info">
@@ -475,7 +489,7 @@ body::after{
 
   <article class="project" data-modal="feadrone">
     <div class="project-media" data-cursor="view">
-      <span class="project-num">Featured / 03</span>
+      <span class="project-num">Featured / 04</span>
       <img src="assets/feadrone_assembled.jpg" alt="Final assembled drone">
     </div>
     <div class="project-info">
@@ -560,6 +574,24 @@ body::after{
 <script>
 /* ===== EXPERIENCE DATA (edit here to update the section) ===== */
 const EXPERIENCE = [
+  {
+    role: 'Drivetrain Design Contributor',
+    org: 'Toro Motorsports · Purdue University, USA',
+    dates: 'Sep 2026 — Present',
+    meta: ['Remote', 'Design & Development'],
+    summary: 'Contributing to the design and development of a three-stage drivetrain for a Yamaha KT100-powered racing kart, integrating a synchronous belt reduction, Comet 40 Series CVT and chain final drive connected to a 50 mm OTK rear axle.',
+    points: [
+      'Developing a three-stage power transmission layout integrating belt reduction, CVT and chain drive to transfer engine power to the rear axle.',
+      'Performing gear ratio, shaft speed, torque and centre-distance calculations to evaluate drivetrain performance and select suitable transmission configurations.',
+      'Creating 3D models of timing pulleys, sprockets, shafts and drivetrain components in Siemens NX and SOLIDWORKS, including tooth profiles, keyways and mounting features.',
+      'Integrating the Comet 40 Series CVT into the drivetrain assembly, considering pulley positioning, shaft alignment, clearances and packaging constraints.',
+      'Evaluating HTD 8M timing belts, pulley ratios, chain sprockets and transmission components against mechanical requirements and available space.',
+      'Developing preliminary jackshaft mounting arrangements, considering bearing support, assembly accessibility and manufacturability.',
+      'Working remotely with the US-based powertrain team to review CAD designs, discuss technical challenges and refine the transmission layout.'
+    ],
+    skills: ['Siemens NX','SOLIDWORKS','Drivetrain Design','CVT Integration','Belt & Chain Drives','Ratio & Torque Calculations','Component Selection','Mechanical Packaging','Remote Collaboration'],
+    modal: 'toro'
+  },
   {
     role: 'Development Engineer',
     org: 'Harry Levy Amusement Contractor Ltd.',
@@ -781,7 +813,7 @@ const EXPERIENCE = [
   <h2 class="h-display" style="margin-bottom:clamp(40px,6vw,80px)">Skills<em>.</em></h2>
   <div class="skill-row" data-reveal>
     <h4><i>A.</i>Technical</h4>
-    <div class="chips"><span>Autodesk Inventor</span><span>MATLAB</span><span>Simulink</span><span>ANSYS (FEA, CFD)</span><span>Fusion 360</span><span>SolidWorks</span><span>Qblade</span><span>ANSYS SpaceClaim</span><span>ANSYS Discovery</span><span>3D CAD Modelling</span><span>Engineering Drawings</span><span>Manufacturing Documentation</span></div>
+    <div class="chips"><span>Autodesk Inventor</span><span>MATLAB</span><span>Simulink</span><span>ANSYS (FEA, CFD)</span><span>Fusion 360</span><span>SolidWorks</span><span>Siemens NX</span><span>CATIA V5 (Learning)</span><span>Qblade</span><span>ANSYS SpaceClaim</span><span>ANSYS Discovery</span><span>3D CAD Modelling</span><span>Engineering Drawings</span><span>Manufacturing Documentation</span></div>
   </div>
   <div class="skill-row" data-reveal>
     <h4><i>B.</i>Engineering</h4>
@@ -816,6 +848,8 @@ const EXPERIENCE = [
   <div class="tools-grid">
     <div class="tool"><b>Inventor</b><span>CAD · Mech</span></div>
     <div class="tool"><b>SolidWorks</b><span>CAD · Solid</span></div>
+    <div class="tool"><b>Siemens NX</b><span>CAD · Assembly</span></div>
+    <div class="tool"><b>CATIA V5</b><span>CAD · Learning</span></div>
     <div class="tool"><b>Fusion 360</b><span>CAD · Cloud</span></div>
     <div class="tool"><b>SpaceClaim</b><span>CAD · ANSYS</span></div>
     <div class="tool"><b>Discovery</b><span>Live FEA / CFD</span></div>
@@ -829,9 +863,7 @@ const EXPERIENCE = [
     <div class="tool"><b>Boothroyd D.</b><span>DFMA</span></div>
     <div class="tool"><b>MS Excel</b><span>Advanced</span></div>
     <div class="tool"><b>MS Project</b><span>Planning</span></div>
-    <div class="tool"><b>Word</b><span>Docs</span></div>
-    <div class="tool"><b>PowerPoint</b><span>Reporting</span></div>
-    <div class="tool"><b>+ More</b><span>Always learning</span></div>
+    <div class="tool"><b>Word · PowerPoint</b><span>Docs · Reporting</span></div>
   </div>
 </section>
 
@@ -1159,6 +1191,30 @@ const EXPERIENCE = [
 
   /* ---------- Case study data ---------- */
   const DATA = {
+    toro: {
+      eyebrow: "Featured · Drivetrain Design & CVT Integration",
+      title: "Kart Drivetrain Design & CVT Integration (Toro Motorsports, Purdue University)",
+      meta: { Role: "Drivetrain Design Contributor (Remote)", Team: "Toro Motorsports · Purdue University, USA", Period: "Sep 2026 to Present", Tools: "Siemens NX · SOLIDWORKS", Status: "Design & Development" },
+      pills: ["Siemens NX","SOLIDWORKS","Yamaha KT100","Comet 40 Series CVT","HTD 8M Belt","Chain Final Drive"],
+      hero: "toro_kart_drivetrain.jpg",
+      paragraphs: [
+        "Contributing to the design and development of a three stage drivetrain for a racing kart powered by a Yamaha KT100 engine. The system integrates a synchronous belt reduction, Comet 40 Series Continuously Variable Transmission (CVT) and chain final drive connected to a 50 mm OTK rear axle.",
+        "The project focuses on achieving suitable speed reduction, torque delivery, mechanical reliability and efficient component packaging.",
+        "<strong>Drivetrain Design.</strong> Developing a three stage power transmission layout integrating belt reduction, CVT and chain drive to transfer engine power to the rear axle.",
+        "<strong>Engineering Calculations.</strong> Performing gear ratio, shaft speed, torque and centre distance calculations to evaluate drivetrain performance and select suitable transmission configurations.",
+        "<strong>CAD Modelling.</strong> Creating 3D models of timing pulleys, sprockets, shafts and drivetrain components using Siemens NX and SOLIDWORKS, including tooth profiles, keyways and mounting features.",
+        "<strong>CVT Integration.</strong> Incorporating the Comet 40 Series CVT into the drivetrain assembly, considering pulley positioning, shaft alignment, clearances and packaging constraints.",
+        "<strong>Component Selection.</strong> Evaluating HTD 8M timing belts, pulley ratios, chain sprockets and transmission components based on mechanical requirements and available space.",
+        "<strong>Mechanical Integration.</strong> Developing preliminary jackshaft mounting arrangements and drivetrain layouts, considering bearing support, assembly accessibility and manufacturability.",
+        "<strong>Team Collaboration.</strong> Working remotely with the US based powertrain team to review CAD designs, discuss technical challenges and refine the transmission layout."
+      ],
+      sections: [
+        { h: "Drivetrain Integrated in the Kart. CVT Integration & Packaging", imgs: ["toro_kart_drivetrain.jpg","toro_cvt_packaging.jpg"] },
+        { h: "Complete Three Stage Drivetrain. HTD 8M Belt Reduction, Comet 40 CVT & Chain Final Drive", imgs: ["toro_drivetrain_assembly_a.jpg","toro_drivetrain_assembly_b.jpg"] },
+        { h: "Full Kart Assembly (OAL) in Siemens NX", imgs: ["toro_oal_assembly.jpg"] },
+        { h: "Chain Final Drive. Sprockets & Chain to the 50 mm OTK Rear Axle", imgs: ["toro_chain_drive.jpg"] }
+      ]
+    },
     drive: {
       eyebrow: "Featured · Drivetrain Design",
       title: "Drive System for Railway Vehicles (IMechE & European Railway Challenge)",
